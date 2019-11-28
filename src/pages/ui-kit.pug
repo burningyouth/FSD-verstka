@@ -1,4 +1,4 @@
-include ../blocks/mixin/mixin.pug
+//include ../blocks/mixin/mixin.pug
 doctype html
 html(lang="en")
     head
@@ -6,13 +6,13 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title UI-kit
-    body
-        - let text = "UI-KIT"
-        - let i = 0 
-        - for(i = 0; i < 3; i++)
+    body.body
+        //- let text = "UI-KIT"
+        //- let i = 0 
+        //- for(i = 0; i < 3; i++)
             .wrapper
                 include ../blocks/example/example.pug
-        while i <= 5
+        //while i <= 5
             .wrapper
                 if text == "UI-KIT"
                     +mixin(text)
@@ -20,3 +20,6 @@ html(lang="en")
                 else
                     +mixin("ТЕКСТ НЕПРАВИЛЬНЫЙ")
                     div #{i++}
+        button.button.button_block Подобрать номер
+            span.button__arrow
+                i.material-icons arrow_forward

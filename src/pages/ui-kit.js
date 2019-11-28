@@ -7,3 +7,4 @@ function importAll(r) {
 }
 
 importAll(require.context('../blocks/', true, /(\.less|\.js)$/));
+importAll(require.context('../assets/', true, /\.css|\.js|\.less$/));

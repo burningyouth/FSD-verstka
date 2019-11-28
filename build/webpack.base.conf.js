@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
 const PATHS = {
-  src: path.join(__dirname, '../src/pages'),
+  src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
   assets: 'assets/'
 }
@@ -16,7 +16,7 @@ const PATHS = {
 // Pages const for HtmlWebpackPlugin
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
 // const PAGES_DIR = PATHS.src
-const PAGES_DIR = `${PATHS.src}`
+const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 const PAGES_ENTRY = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.js'))
 
@@ -25,8 +25,7 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    kit: `${PATHS.src}/ui-kit.js`,
-    example: `${PATHS.src}/example-page.js`
+    kit: `${PATHS.src}/pages/ui-kit.js`
   },
   output: {
     filename: `${PATHS.assets}js/[name].js`,
@@ -49,12 +48,14 @@ module.exports = {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
+        outputPath: `${PATHS.assets}fonts`, 
         name: '[name].[ext]'
       }
     }, {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {
+        outputPath: `${PATHS.assets}img`,
         name: '[name].[ext]'
       }
     }, {
@@ -64,7 +65,10 @@ module.exports = {
         MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
-          options: { sourceMap: true }
+          options: { 
+            sourceMap: true,
+            url: false
+          }
         }, {
           loader: 'postcss-loader',
           options: { sourceMap: true, config: { path: `./postcss.config.js` } }
@@ -80,7 +84,10 @@ module.exports = {
         MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
-          options: { sourceMap: true }
+          options: { 
+            sourceMap: true,
+            url: false
+          }
         }, {
           loader: 'postcss-loader',
           options: { sourceMap: true, config: { path: `./postcss.config.js` } }
@@ -90,7 +97,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '~': PATHS.src,
+      '~': PATHS.src+"/pages",
     }
   },
   plugins: [
