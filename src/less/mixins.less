@@ -1,5 +1,11 @@
 @import 'variables.less';
 
+html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .transition(@prop: all, @time: 0.5s, @func: ease){
     transition: @arguments;
 }
@@ -44,4 +50,61 @@
     line-height: 24px;
 
     color: @dark-shade75;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 100%;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.margin-generator(@iterator: 1, @length: 10, @step: 5) when (@iterator <= @length) {
+    @postfix: @step * @iterator;
+    @margin: @postfix * 1px;
+    @next: @iterator + 1;
+    
+    .mr-@{postfix} {
+      margin-right: @margin;
+    }
+
+    .ml-@{postfix} {
+        margin-left: @margin;
+    }
+    
+    .mt-@{postfix} {
+        margin-top: @margin;
+    }
+    
+    .mb-@{postfix} {
+        margin-bottom: @margin;
+    }
+
+    .margin-generator(@next, @length, @step);
+}
+
+.margin-generator();
+
+.gradient-color(@gradient){
+    background-image: @gradient;
+    color:transparent;
+    background-clip: text;
 }

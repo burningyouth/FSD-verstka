@@ -1,0 +1,17 @@
+@import '../../../less/mixins.less';
+
+.like-button.like-button_liked{
+    border-color: @purple;
+
+    &::before{
+        content: 'favorite';
+
+        color: @purple;
+
+    }
+
+    .like-button__counter{
+        color: @purple;
+    }
+
+}

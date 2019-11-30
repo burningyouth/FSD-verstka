@@ -1,0 +1,16 @@
+@import '../../../less/mixins.less';
+
+.pagination__arrow{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    background-image: @secondary-gradient;
+    &::before{
+        .material-icons;
+        color: white;
+        line-height: 40px;
+    }
+}

@@ -21,33 +21,50 @@ html(lang="en")
                     +mixin("ТЕКСТ НЕПРАВИЛЬНЫЙ")
                     div #{i++}
         button.button.button_block Подобрать номер
-            span.button__icon.material-icons arrow_forward
-        br
-        br
-        .form-group
+            span.button__icon arrow_forward
+
+        .form-group.mt-30
             span.form-group__label Text field
             .form-group
                 input(type="text" placeholder="Text").text-field
-                span.text-field__icon.material-icons arrow_forward
+                span.text-field__icon arrow_forward
 
-        br
-        br
-        a(href="#").link Click me
-        a(href="#").link.link_faded Click me
+        .form-group.mt-30
+            a(href="#").link.mr-10 Click me
+            a(href="#").link.link_faded Click me
 
-        br
-        br
-        .form-group
+        .form-group.mt-30
             input(type="checkbox" id="chckbx").checkbox
             label(for="chckbx") Можно курить
-        br
-        br
-        .form-group
+
+        .form-group.mt-30
             input(type="checkbox" id="radio" checked).radio-button
             label(for="radio") Можно курить
-
-        br
-        br
-        .form-group
+            
+        .form-group.mt-30
             input(type="checkbox" id="toggle" checked).toggle
             label(for="toggle") Можно курить
+        
+        .form-group.mt-30
+            button.like-button.like-button_liked.mr-10
+                span.like-button__counter 12
+            button.like-button        
+                span.like-button__counter 1
+
+        .rating.mt-30
+            span.rating__star.rating__star_active
+            span.rating__star.rating__star_active
+            span.rating__star.rating__star_active
+            span.rating__star.rating__star_active
+            span.rating__star
+
+        .pagination.mt-30
+            a(href="#").pagination__arrow.pagination__arrow_prev
+            a(href="#").pagination__link 1
+            a(href="#").pagination__link.pagination__link_active 2
+            a(href="#").pagination__link 3
+            a(href="#").pagination__link ...
+            a(href="#").pagination__link 15
+            a(href="#").pagination__arrow.pagination__arrow_next
+            span.pagination__label 1 – 12 из 100+ вариантов аренды
+        

@@ -1,0 +1,9 @@
+@import '../../../less/mixins.less';
+
+.rating__star::before{
+    content: 'star_border';
+    display: inline-block;
+    .material-icons;
+    height: 24px;
+    .gradient-color(@primary-gradient);
+}
