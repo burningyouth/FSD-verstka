@@ -1,0 +1,27 @@
+@import '../../../less/mixins.less';
+
+.dropdown__icon{
+    position: absolute;
+    top:0;
+    right: 0;
+
+    display: inline-block;
+    -webkit-user-select: none;
+    cursor: pointer;
+
+    width: 44px;
+    height: 44px;
+
+    .material-icons;
+
+    color: @dark-shade75;
+    text-align: center;
+    line-height: 44px;
+
+    .transition(transform, .3s);
+
+}
+
+.dropdown_collapsed .dropdown__icon{
+    transform: rotate(-180deg);
+}
