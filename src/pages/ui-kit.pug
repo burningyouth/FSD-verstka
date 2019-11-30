@@ -21,5 +21,33 @@ html(lang="en")
                     +mixin("ТЕКСТ НЕПРАВИЛЬНЫЙ")
                     div #{i++}
         button.button.button_block Подобрать номер
-            span.button__arrow
-                i.material-icons arrow_forward
+            span.button__icon.material-icons arrow_forward
+        br
+        br
+        .form-group
+            span.form-group__label Text field
+            .form-group
+                input(type="text" placeholder="Text").text-field
+                span.text-field__icon.material-icons arrow_forward
+
+        br
+        br
+        a(href="#").link Click me
+        a(href="#").link.link_faded Click me
+
+        br
+        br
+        .form-group
+            input(type="checkbox" id="chckbx").checkbox
+            label(for="chckbx") Можно курить
+        br
+        br
+        .form-group
+            input(type="checkbox" id="radio" checked).radio-button
+            label(for="radio") Можно курить
+
+        br
+        br
+        .form-group
+            input(type="checkbox" id="toggle" checked).toggle
+            label(for="toggle") Можно курить

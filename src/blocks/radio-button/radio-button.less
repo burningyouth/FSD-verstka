@@ -1,0 +1,46 @@
+@import '../../less/mixins.less';
+
+.radio-button{
+    display: none;
+    & + label{
+        position: relative;
+        margin-left: 29.7px;
+        -webkit-user-select: none;
+        cursor: pointer;
+    }
+
+    & + label::before{
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 9.7px;
+        position: absolute;
+        bottom: 0;
+        left: -29.7px;
+
+        border: 1px solid @purple;
+        box-sizing: border-box;
+        border-radius: 50%;
+    }
+
+
+    & + label::after{
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        
+        position: absolute;
+        bottom: 4px;
+        left: -25.7px;
+
+        background: transparent;
+        box-sizing: border-box;
+        border-radius: 50%;
+    }
+
+    &:checked + label::after{
+        background: @primary-gradient;
+    }
+}

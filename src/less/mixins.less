@@ -1,5 +1,9 @@
 @import 'variables.less';
 
+.transition(@prop: all, @time: 0.5s, @func: ease){
+    transition: @arguments;
+}
+
 .widget-title{
     font-family: Quicksand;
     font-style: normal;
@@ -32,7 +36,12 @@
     color: @dark-shade;
 }
 
-.center {
-    display: inline-block;
-    vertical-align: middle;
+.basic-text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: @dark-shade75;
 }
