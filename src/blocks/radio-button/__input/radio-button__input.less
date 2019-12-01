@@ -1,0 +1,47 @@
+@import '../../../less/mixins.less';
+
+.radio-button__input{
+    display: inline-block;
+    appearance: none !important;
+    position: relative;
+    margin-left: 26.7px;
+    cursor: pointer;
+    width: 0;
+    height: 20px;
+    outline: none;
+
+    &::before{
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 6.7px;
+        position: absolute;
+        bottom: 0;
+        left: -26.7px;
+
+        border: 1px solid @purple;
+        box-sizing: border-box;
+        border-radius: 50%;
+    }
+
+
+    &::after{
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        
+        position: absolute;
+        bottom: 4px;
+        left: -22.7px;
+
+        background: transparent;
+        box-sizing: border-box;
+        border-radius: 50%;
+    }
+
+    &:checked::after{
+        background: @primary-gradient;
+    }
+}

@@ -1,0 +1,18 @@
+@import '../../../less/mixins.less';
+
+.bullet-list__item{
+    font-size: inherit;
+    line-height: inherit;
+    &::before{
+        content:'';
+
+        display: inline-block;
+
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+
+        background-color: @dark-shade25;
+        border-radius: 50%;
+    }
+}

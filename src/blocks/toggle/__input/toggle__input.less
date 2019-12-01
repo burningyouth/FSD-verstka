@@ -1,0 +1,56 @@
+@import '../../../less/mixins.less';
+
+.toggle__input{
+    appearance: none !important;
+
+    display: inline-block;
+    position: relative;
+    margin-left: 46.7px;
+    cursor: pointer;
+    width: 0;
+    height: 20px;
+    outline: none;
+
+    &::before{
+        content: '';
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        margin-right: 6.7px;
+        position: absolute;
+        bottom: 0;
+        left: -46.7px;
+
+        border: 1px solid @dark-shade25;
+        box-sizing: border-box;
+        border-radius: 10px;
+
+    }
+
+
+    &::after{
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        
+        position: absolute;
+        bottom: 4px;
+        left: -42.7px;
+
+        background: @dark-shade25;
+        box-sizing: border-box;
+        border-radius: 50%;
+
+        .transition(left, .3s);
+    }
+
+    &:checked::after{
+        background: @primary-gradient;
+        left: -22.7px;
+    }
+
+    &:checked::before{
+        border-color: @purple;
+    }
+}

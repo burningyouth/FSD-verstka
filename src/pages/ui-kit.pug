@@ -34,17 +34,27 @@ html(lang="en")
             a(href="#").link.mr-10 Click me
             a(href="#").link.link_faded Click me
 
-        .form-group.mt-30
-            input(type="checkbox" id="chckbx").checkbox
-            label(for="chckbx") Можно курить
+        .checkbox.mt-30
+            input(type="checkbox" id="chckbx").checkbox__input
+            label(for="chckbx").checkbox__label-box
+                span.checkbox__label Можно курить
+        br
+        .checkbox.mt-30
+            input(type="checkbox" id="chckbx_rich").checkbox__input
+            label(for="chckbx_rich").checkbox__label-box
+                strong.checkbox__label.checkbox__label_rich Можно курить
+                span.checkbox__label Lorem ipsum dolor sit amet consectetur,  
+                    br
+                    |adipisicing elit. Quae, sequi!
+        br
+        .radio-button.mt-30
+            input(type="checkbox" id="radio" checked).radio-button__input
+            label(for="radio").radio-button__label Можно курить
 
-        .form-group.mt-30
-            input(type="checkbox" id="radio" checked).radio-button
-            label(for="radio") Можно курить
-            
-        .form-group.mt-30
-            input(type="checkbox" id="toggle" checked).toggle
-            label(for="toggle") Можно курить
+        br
+        .toggle.mt-30
+            input(type="checkbox" id="toggle" checked).toggle__input
+            label(for="toggle").toggle__label Можно курить
         
         .form-group.mt-30
             button.like-button.like-button_liked.mr-10
@@ -69,17 +79,33 @@ html(lang="en")
             a(href="#").pagination__arrow.pagination__arrow_next
             span.pagination__label 1 – 12 из 100+ вариантов аренды
 
-        .dropdown.mt-30
-            .dropdown__field 2 спальни, 2 кровати..
+        .dropdown.mt-30.dropdown_collapsed
+            .dropdown__field 2 спальни, 2 кроватnefbebg eiufuebfibe fhuebfu
             .dropdown__icon expand_more
             .dropdown__list 
-                | Lorem ipsum dolor sit amet, 
-                br    
-                | consectetur adipisicing elit. 
-                br
-                |Dolor magni autem earum. Nihil 
-                br
-                |saepe aliquam dolores laborum 
-                br
-                |maxime quidem necessitatibus!
+                .dropdown__row
+                    .dropdown__counter-label спальни
+                    .counter
+                        button.counter__handler.counter__handler_minus
+                        input(type="number", name="count1", value='0', min='0' max='12', readonly).counter__input
+                        button.counter__handler.counter__handler_plus
+                .dropdown__row
+                    .dropdown__counter-label кровати
+                    .counter
+                        button.counter__handler.counter__handler_minus
+                        input(type="number", name="count1", value='0', min='0' max='12', readonly).counter__input
+                        button.counter__handler.counter__handler_plus
+                .dropdown__row
+                    .dropdown__counter-label ванные
+                    .counter
+                        button.counter__handler.counter__handler_minus
+                        input(type="number", name="count1", value='0', min='0' max='12', readonly).counter__input
+                        button.counter__handler.counter__handler_plus
+                .dropdown__buttons
+                    button.dropdown__button.dropdown__button_secondary Очистить
+                    button.dropdown__button Применить
         
+        ul.bullet-list
+            li.bullet-list__item Нельзя с питомцами
+            li.bullet-list__item Без вечеринок и мероприятий
+            li.bullet-list__item Время прибытия — после 13:00, а выезд до 12:00
