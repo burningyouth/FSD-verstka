@@ -1,0 +1,32 @@
+@import '../../../less/mixins.less';
+
+.checkbox__input{
+    display: inline-block;
+    appearance: none !important;
+    position: relative;
+
+    width: 0;
+    height: 20px;
+    outline: none;
+    margin-left: 26.7px;
+    cursor: pointer;
+
+    &::before{
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        bottom: 0;
+        left: -26.7px;
+
+        border: 1px solid @dark-shade25;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    &:checked::before{
+        border-color: @purple;
+        background: url('../img/check.svg') no-repeat 50% 40%;
+    }
+}

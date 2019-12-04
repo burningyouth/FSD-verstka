@@ -1,0 +1,33 @@
+@import '../../../less/mixins.less';
+
+.range-slider__input{
+    height: 6px;
+    background: #FFFFFF;
+    border: 1px solid @dark-shade25;
+    box-sizing: border-box;
+    border-radius: 3px;
+    .noUi-handle{
+        top: -6px;
+        right: -6.5px !important;
+        width: 10px;
+        height: 10px;
+        box-sizing: content-box;
+        outline: none;
+        cursor: pointer;
+
+        background: @secondary-gradient;
+        border: 2px solid #FFFFFF;
+        border-radius: 10px;
+
+        &::before, &::after{
+            display: none;
+        }
+
+
+    }
+
+    .noUi-connect{
+        background: @secondary-gradient;
+        border-radius: 3px;
+    }
+}

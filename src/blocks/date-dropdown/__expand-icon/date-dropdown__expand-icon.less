@@ -1,0 +1,30 @@
+@import '../../../less/mixins.less';
+
+.date-dropdown__expand-icon{
+    position: absolute;
+    top:0;
+    right: 0;
+
+    display: inline-block;
+
+    width: 44px;
+    height: 44px;
+
+    .transition(transform);
+
+    &::before{
+        content:'expand_more';
+        display: block;
+        -webkit-user-select: none;
+
+        .material-icons;
+
+        width: 44px;
+        height: 44px;
+
+        color: @dark-shade50;
+        text-align: center;
+        line-height: 44px;
+
+    }
+}
