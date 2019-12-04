@@ -1,6 +1,6 @@
 $(document).ready(function(){
     let buttons = $(".counter__handler"),
-        inputs = $(".counter__input");
+        counters = $(".counter__input");
 
     function refreshClasses(button, max, min, val, needRefreshSecond = true){
         let secondButton;
@@ -24,7 +24,7 @@ $(document).ready(function(){
         }
     }
 
-    inputs.each(function(key, input){
+    counters.each(function(key, input){
         let buttonInitial = $(input).parent().find('.counter__handler.counter__handler_minus'),
             max = $(input).attr('max') ? parseInt($(input).attr('max')) : Infinity,
             min = $(input).attr('min') ? parseInt($(input).attr('min')) : -Infinity,
@@ -32,7 +32,7 @@ $(document).ready(function(){
         refreshClasses(buttonInitial, max, min, val);
     });
 
-    inputs.change(function(e){
+    counters.change(function(e){
         let counter = $(this),
             buttonMinus = $(this).parent().find('.counter__handler.counter__handler_minus'),
             max = counter.attr('max') ? parseInt(counter.attr('max')) : Infinity,
@@ -67,5 +67,6 @@ $(document).ready(function(){
         
 
     });
+
 
 })

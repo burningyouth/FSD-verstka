@@ -82,14 +82,14 @@ html(lang="en")
             span.pagination__label 1 – 12 из 100+ вариантов аренды
 
         .dropdown.mt-30.dropdown_collapsed
-            .dropdown__field(data-placeholder='Сколько гостей', data-value-format='${total} гостей') Сколько гостей
+            .dropdown__field(data-placeholder='Сколько гостей', data-value-format='${total} [гость;гостей;гостей]') Сколько гостей
             .dropdown__expand-icon
             .dropdown__list 
                 .dropdown__row
                     .dropdown__counter-label взрослые
                     .counter
                         button.counter__handler.counter__handler_minus
-                        input(type="number", name="count1", value='0', min='0' max='12', readonly).counter__input
+                        input(type="number", name="count1", value='4', min='0' max='12', readonly).counter__input
                         button.counter__handler.counter__handler_plus
                 .dropdown__row
                     .dropdown__counter-label дети
@@ -105,17 +105,17 @@ html(lang="en")
                         button.counter__handler.counter__handler_plus
                 .dropdown__buttons
                     button.dropdown__button.dropdown__button_clear Очистить
-                    button.dropdown__button Применить
+                    button.dropdown__button.dropdown__button_apply Применить
         br
         .dropdown.mt-30.dropdown_collapsed
-            .dropdown__field(data-placeholder='Удобства', data-value-format='${counters[0]} спальни, ${counters[1]} кровати, ${counters[2]} ванные комнаты') Удобства
+            .dropdown__field(data-placeholder='Удобства',data-restricted-value='0', data-value-format='${counters[0]} [спальня;спальни;спален], ${counters[1]} [кровать;кровати;кроватей], ${counters[2]} [ванная комната;ванные комнаты;ванных комнат]') Удобства
             .dropdown__expand-icon
             .dropdown__list 
                 .dropdown__row
                     .dropdown__counter-label спальни
                     .counter
                         button.counter__handler.counter__handler_minus
-                        input(type="number", name="count1", value='0', min='0' max='12', readonly).counter__input
+                        input(type="number", name="count1", value='2', min='0' max='12', readonly).counter__input
                         button.counter__handler.counter__handler_plus
                 .dropdown__row
                     .dropdown__counter-label кровати
@@ -131,7 +131,7 @@ html(lang="en")
                         button.counter__handler.counter__handler_plus
                 .dropdown__buttons
                     button.dropdown__button.dropdown__button_clear Очистить
-                    button.dropdown__button Применить
+                    button.dropdown__button.dropdown__button_apply Применить
         
         ul.bullet-list.mt-30
             li.bullet-list__item Нельзя с питомцами
