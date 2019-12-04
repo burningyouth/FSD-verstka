@@ -1,36 +1,5 @@
-@import '../../less/mixins.less';
-
 .text-field{
-    appearance: none !important;
     display: block;
-
-    box-sizing: border-box;
-    border-radius: 4px;
-    padding: 9px 15px;
-
+    position: relative;
     width: 100%;
-    height: 44px;
-
-    .basic-text;
-
-    background: #FFFFFF;
-    border: 1px solid @dark-shade25;
-    outline:none;
-    color: @dark-shade25;
-    .transition(all);
-
-    &::-webkit-input-placeholder {
-        color: @dark-shade25;
-        .transition(color);
-    }
-
-    &:hover, &:focus{
-        border-color: @dark-shade;
-        color: @dark-shade;
-
-        &::-webkit-input-placeholder {
-            color: @dark-shade;
-        }
-        
-    }
 }

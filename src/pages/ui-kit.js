@@ -6,5 +6,7 @@ function importAll(r) {
     });
 }
 
-importAll(require.context('../blocks/', true, /(\.less|\.js)$/));
+import 'air-datepicker/dist/css/datepicker.min.css';
+
 importAll(require.context('../assets/', true, /\.css|\.js|\.less$/));
+importAll(require.context('../blocks/', true, /(\.less|\.js)$/));

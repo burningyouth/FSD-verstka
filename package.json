@@ -36,6 +36,7 @@
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
+    "air-datepicker": "^2.2.3",
     "autoprefixer": "^9.7.2",
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.0.5",
@@ -48,6 +49,7 @@
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "nouislider": "^14.0.3",
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",

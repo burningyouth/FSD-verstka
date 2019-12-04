@@ -6,12 +6,14 @@ html{
     padding: 0;
 }
 
-.transition(@prop: all, @time: 0.5s, @func: ease){
-    transition: @arguments;
+.transition(@rest...){
+    transition-property: @rest;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
 }
 
 .widget-title{
-    font-family: Quicksand;
+    font-family: Quicksand, 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -21,7 +23,7 @@ html{
 }
 
 .item-title{
-    font-family: Quicksand;
+    font-family: Quicksand, 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 19px;
@@ -31,7 +33,7 @@ html{
 }
 
 .cta-text{
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -43,7 +45,7 @@ html{
 }
 
 .basic-text{
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;

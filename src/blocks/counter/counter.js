@@ -51,14 +51,15 @@ $(document).ready(function(){
             step = counter.attr('step') ? parseInt(counter.attr('step')) : 1,
             val = parseInt(counter.val());
 
-        e.preventDefault();
         if (counter && button.hasClass('counter__handler_minus')){
             if(val > min){
                 counter.val(val - step);
+                counter.trigger( "change" );
             }
         }else if(counter && button.hasClass('counter__handler_plus')){
             if(val < max){
                 counter.val(val + step);
+                counter.trigger( "change" );
             }
         }
 

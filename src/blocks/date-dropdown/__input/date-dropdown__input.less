@@ -1,0 +1,28 @@
+@import '../../../less/mixins.less';
+
+.date-dropdown__input{
+    position: relative;
+    z-index: 1;
+
+    appearance: none !important;
+    display: block;
+
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 9px 15px;
+    cursor: pointer;
+
+    width: 100%;
+    height: 44px;
+
+    .basic-text;
+
+    background: none;
+    border: 1px solid @dark-shade25;
+    outline:none;
+    color: @dark-shade75;
+
+    &::-webkit-input-placeholder {
+        color: @dark-shade75;
+    }
+}
