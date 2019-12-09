@@ -2,7 +2,7 @@ import 'air-datepicker';
 
 $(document).ready(function(){
     let datesFilter = $(".date-dropdown.date-dropdown_filter .date-dropdown__input");
-    datesFilter.datepicker({ 
+    datesFilter.datepicker({
         range: true,
         dateFormat: 'd M',
         multipleDatesSeparator: ' - ',

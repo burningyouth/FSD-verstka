@@ -1,0 +1,12 @@
+mixin text-with-icon(icon)
+    .text-with-icon
+        if icon
+            .text-with-icon__icon= icon
+        else
+            .text-with-icon__icon error
+            |no icon!
+        .text-with-icon__text 
+            if block
+                block
+            else
+                p Нет контента!

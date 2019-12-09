@@ -1,0 +1,8 @@
+mixin toggle(label, id, checked, classModifier)
+    .toggle(class=classModifier)
+        if checked == 'checked'
+            input(type="checkbox", name=id, id=id, checked).toggle__input
+        else
+            input(type="checkbox", name=id, id=id).toggle__input
+        if label
+            label(for=id).toggle__label= label

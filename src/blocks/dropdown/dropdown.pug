@@ -1,0 +1,14 @@
+mixin dropdown(placeholder, valueFormat, restrictedValue, classModifier)
+    .dropdown(class=classModifier)
+        .dropdown__field(data-placeholder=placeholder, data-restricted-value=restrictedValue, data-value-format=valueFormat)= placeholder
+        .dropdown__expand-icon
+        .dropdown__list
+            if block
+                block
+            else
+                p Нет контента!
+            .dropdown__buttons
+                button.dropdown__button.dropdown__button_clear Очистить
+                button.dropdown__button.dropdown__button_apply Применить
+
+include ./__row/dropdown__row.pug

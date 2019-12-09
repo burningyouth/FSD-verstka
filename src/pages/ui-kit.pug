@@ -1,4 +1,4 @@
-//include ../blocks/mixin/mixin.pug
+include ../pug/mixins.pug
 doctype html
 html(lang="en")
     head
@@ -8,49 +8,31 @@ html(lang="en")
         link(rel="stylesheet", href="./assets/css/kit.css")
         title UI-kit
     body.body
-        //- let text = "UI-KIT"
-        //- let i = 0 
-        //- for(i = 0; i < 3; i++)
-            .wrapper
-                include ../blocks/example/example.pug
-        //while i <= 5
-            .wrapper
-                if text == "UI-KIT"
-                    +mixin(text)
-                    div #{i++}
-                else
-                    +mixin("ТЕКСТ НЕПРАВИЛЬНЫЙ")
-                    div #{i++}
-        button.button.button_block Подобрать номер
-            span.button__icon arrow_forward
+        +button_block('Выбрать номер', 'text', 'arrow_forward')
 
         h2.item-title.mt-30 швошпшк кошутштпшук уштктш ушк 
 
-        .form-group.mt-30
-            span.form-group__label Text field
-            .text-field
-                input(type="text" placeholder="Text").text-field__input
-                span.text-field__icon arrow_forward
+        .mt-30
+            +form-group('Text field')
+                +text-field_subscription('Placeholder', 'text1', 'arrow_forward')
+
+        .mt-30
+            +form-group('Text field')
+                +text-field('W/icons', 'text1')
 
         .form-group.mt-30
             a(href="#").link.mr-10 Click me
             a(href="#").link.link_faded Click me
 
-        .checkbox.mt-30
-            input(type="checkbox" id="chckbx").checkbox__input
-            label(for="chckbx").checkbox__label-box
-                span.checkbox__label Можно курить
-        br
-        .checkbox.mt-30
-            input(type="checkbox" id="chckbx_rich").checkbox__input
-            label(for="chckbx_rich").checkbox__label-box
-                strong.checkbox__label.checkbox__label_rich Можно курить
-                span.checkbox__label Lorem ipsum dolor sit amet consectetur,  
-                    br
-                    |adipisicing elit. Quae, sequi!
-        br
+        .mt-30
+            +checkbox('Можно курить', 'checkbox1', 'checkbox1')
+        .mt-30
+            +checkbox('Можно курить', 'checkbox2', 'checkbox1', 'checked')
+                |Lorem ipsum dolor sit amet consectetur,  
+                br
+                |adipisicing elit. Quae, sequi!
         .radio-button.mt-30
-            input(type="checkbox" id="radio" checked).radio-button__input
+            input(type="checkbox", id="radio", name='radio1', checked).radio-button__input
             label(for="radio").radio-button__label Можно курить
 
         br
@@ -58,18 +40,15 @@ html(lang="en")
             input(type="checkbox" id="toggle" checked).toggle__input
             label(for="toggle").toggle__label Можно курить
         
-        .form-group.mt-30
-            button.like-button.like-button_liked.mr-10
-                span.like-button__counter 12
-            button.like-button        
-                span.like-button__counter 1
-
-        .rating.mt-30
-            span.rating__star.rating__star_active
-            span.rating__star.rating__star_active
-            span.rating__star.rating__star_active
-            span.rating__star.rating__star_active
-            span.rating__star
+        .mt-30
+            +form-group('Like buttons')
+                +like-button(12, 'liked')
+                .mr-10
+                +like-button(1)
+        .mt-30
+            +rating(4)
+        .mt-30
+            +rating(2)
 
         .pagination.mt-30
             a(href="#").pagination__arrow.pagination__arrow_prev
@@ -81,112 +60,80 @@ html(lang="en")
             a(href="#").pagination__arrow.pagination__arrow_next
             span.pagination__label 1 – 12 из 100+ вариантов аренды
 
-        .dropdown.mt-30.dropdown_collapsed
-            .dropdown__field(data-placeholder='Сколько гостей', data-value-format='${total} [гость;гостей;гостей]') Сколько гостей
-            .dropdown__expand-icon
-            .dropdown__list 
-                .dropdown__row
-                    .dropdown__counter-label взрослые
-                    .counter
-                        button.counter__handler.counter__handler_minus
-                        input(type="number", name="count1", value='4', min='0' max='12', readonly).counter__input
-                        button.counter__handler.counter__handler_plus
-                .dropdown__row
-                    .dropdown__counter-label дети
-                    .counter
-                        button.counter__handler.counter__handler_minus
-                        input(type="number", name="count2", value='0', min='0' max='12', readonly).counter__input
-                        button.counter__handler.counter__handler_plus
-                .dropdown__row
-                    .dropdown__counter-label младенцы
-                    .counter
-                        button.counter__handler.counter__handler_minus
-                        input(type="number", name="count3", value='0', min='0' max='12', readonly).counter__input
-                        button.counter__handler.counter__handler_plus
-                .dropdown__buttons
-                    button.dropdown__button.dropdown__button_clear Очистить
-                    button.dropdown__button.dropdown__button_apply Применить
-        br
-        .dropdown.mt-30.dropdown_collapsed
-            .dropdown__field(data-placeholder='Удобства',data-restricted-value='0', data-value-format='${counters[0]} [спальня;спальни;спален], ${counters[1]} [кровать;кровати;кроватей], ${counters[2]} [ванная комната;ванные комнаты;ванных комнат]') Удобства
-            .dropdown__expand-icon
-            .dropdown__list 
-                .dropdown__row
-                    .dropdown__counter-label спальни
-                    .counter
-                        button.counter__handler.counter__handler_minus
-                        input(type="number", name="count1", value='2', min='0' max='12', readonly).counter__input
-                        button.counter__handler.counter__handler_plus
-                .dropdown__row
-                    .dropdown__counter-label кровати
-                    .counter
-                        button.counter__handler.counter__handler_minus
-                        input(type="number", name="count2", value='0', min='0' max='12', readonly).counter__input
-                        button.counter__handler.counter__handler_plus
-                .dropdown__row
-                    .dropdown__counter-label ванные комнаты
-                    .counter
-                        button.counter__handler.counter__handler_minus
-                        input(type="number", name="count3", value='0', min='0' max='12', readonly).counter__input
-                        button.counter__handler.counter__handler_plus
-                .dropdown__buttons
-                    button.dropdown__button.dropdown__button_clear Очистить
-                    button.dropdown__button.dropdown__button_apply Применить
-        
-        ul.bullet-list.mt-30
-            li.bullet-list__item Нельзя с питомцами
-            li.bullet-list__item Без вечеринок и мероприятий
-            li.bullet-list__item Время прибытия — после 13:00, а выезд до 12:00
+        .mt-30
+            +dropdown('Сколько гостей', '${total} [гость;гостей;гостей]', '0')
+                +dropdown__row('взрослые', 'count11', '0', '12', '0')
+                +dropdown__row('дети', 'count12', '0', '12', '0')
+                +dropdown__row('младенцы', 'count13', '0', '12', '0')
+        .mt-30
+            +dropdown('Выберите удобства', '${counters[0]} [спальня;спальни;спален], ${counters[1]} [кровать;кровати;кроватей], ${counters[2]} [ванная комната;ванные комнаты;ванных комнат]', '0')
+                +dropdown__row('спальни', 'count21', '0', '12', '0')
+                +dropdown__row('кровати', 'count22', '0', '12', '0')
+                +dropdown__row('ванные комнаты', 'count23', '0', '12', '0')
+        .mt-30
+            +bullet-list('Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
 
-        .text-with-icon.mt-30
-            .text-with-icon__icon insert_emoticon
-            .text-with-icon__text 
+        .mt-30
+            +text-with-icon('insert_emoticon')
                 strong Комфорт 
                 br
                 span Шумопоглощающие стены
 
-        .testimonial.mt-30
-            .testimonial__right
-                img(src="assets/img/testimonial.jpg", alt="testimonial").testimonial__photo 
-                button.like-button.like-button_liked
-                    span.like-button__counter 12
-            div
-                .testimonial__name
-                    strong Мурад Сарафанов 
-                    br
-                    span 5 дней назад
-                .testimonial__text
-                    |Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+        .mt-30
+            +testimonial("assets/img/testimonial.jpg", '12', 'Мурад Сарафанов', '5 дней назад')
+                |Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+        .mt-30
+            +checkbox-list('expandable checkbox list')
+                +checkbox('Можно курить', 'check1')
+                +checkbox('Можно курить 2', 'check2', 'checked')
+                +checkbox('Можно курить 3', 'check3')
+        .mt-30
+            +range-slider('500', '30000', '500', '30000')
+        .mt-30
+            +form-card('', 'POST')
+                +form-card__title('Найдём номера под ваши пожелания')
+                .row.mb-20
+                    .col-6
+                        +form-group('прибытие')
+                            +date-dropdown('ДД.ММ.ГГ', 'arrival')
+                    .col-6
+                        +form-group('выезд')
+                            +date-dropdown_filter('ДД.ММ.ГГ', 'departure')
+                .mb-30
+                    +form-group('гости')
+                        +dropdown('Сколько гостей', '${total} [гость;гостей;гостей]', '0')
+                            +dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
+                            +dropdown__row('дети',  'guests-children', '0', '12', '0')
+                            +dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
+                +button_block('подобрать номер', 'submit', 'arrow_forward')
 
-        .checkbox-list.mt-30
-            .checkbox-list__label expandable checkbox list
-                .checkbox-list__expand-icon
-            .checkbox-list__list
-                .checkbox
-                    input(type="checkbox" id="chckbx1").checkbox__input
-                    label(for="chckbx1").checkbox__label-box
-                        span.checkbox__label Можно курить
-                .checkbox
-                    input(type="checkbox" id="chckbx2").checkbox__input
-                    label(for="chckbx2").checkbox__label-box
-                        span.checkbox__label Можно курить
-                .checkbox
-                    input(type="checkbox" id="chckbx3").checkbox__input
-                    label(for="chckbx3").checkbox__label-box
-                        span.checkbox__label Можно курить
-                .checkbox
-                    input(type="checkbox" id="chckbx4").checkbox__input
-                    label(for="chckbx4").checkbox__label-box
-                        span.checkbox__label Можно курить
+        .mt-30
+            +form-card('', 'POST')
+                +form-card__title('Регистрация аккаунта')
+                +form-group('', 'mb-30')
+                    +text-field('Имя', 'name', 'mb-10')
+                    +text-field('Фамилия', 'lastname', 'mb-10')
+                    div
+                        +radio-button('Мужчина', 'men', 'sex', 'checked', 'mr-20')
+                        +radio-button('Женщина', 'woman', 'sex')
+                +form-group('Дата рождения', 'mb-20')
+                    +date-dropdown('ДД.ММ.ГГ', 'birthday')
+                +form-group('Данные для входа на сервис', 'mb-20')
+                    +text-field('Email', 'email', 'mb-10')
+                    +text-field('Пароль', 'password', 'mb-10')
+                    +toggle('Получать спецпредложения', 'special-offers')
+                +button_block('перейти к оплате', 'submit', 'arrow_forward')
+                +form-card__footer('Уже есть аккаунт на Toxin', 'войти', '#')
+        
+        .mt-30
+            +form-card('', 'POST')
+                +form-card__title('Войти')
+                +form-group('', 'mb-20')
+                    +text-field('Email', 'email', 'mb-10')
+                    +text-field('Пароль', 'password')
+                +button_block('войти', 'submit', 'arrow_forward')
+                +form-card__footer('Нет аккаунта на Toxin?', 'создать', '#')
 
-        .range-slider.mt-30
-            .range-slider__value
-            .range-slider__input
-
-        .date-dropdown.mt-30
-            input(type="text", name="date-picker", placeholder="ДД.ММ.ГГ", readonly).date-dropdown__input
-            .date-dropdown__expand-icon
-
-        .date-dropdown.date-dropdown_filter.mt-30
-            input(type="text", name="date-picker234", placeholder="ДД ММ - ДД ММ", readonly).date-dropdown__input
-            .date-dropdown__expand-icon
+                    
+                    
+                        

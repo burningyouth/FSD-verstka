@@ -1,0 +1,5 @@
+mixin text-field_subscription(placeholder, id, icon, classModifier)
+    .text-field(class=classModifier)
+        input(type="text", placeholder=placeholder, id=id, name=id).text-field__input
+        if icon
+            span.text-field__icon= icon

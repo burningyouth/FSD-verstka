@@ -4,13 +4,18 @@ $(document).ready(function(){
     let handlesSliders = document.getElementsByClassName('range-slider__input');
     if(handlesSliders && noUiSlider){
         Array.from(handlesSliders).forEach(element => {
-            let sliderValue = element.parentNode.getElementsByClassName('range-slider__value');
+            let parent = $(element).parent(),
+                sliderValue = parent.find('.range-slider__value'),
+                sliderMin = $(element).data('min') ? parseInt($(element).data('min')) : 0,
+                sliderMax = $(element).data('max') ? parseInt($(element).data('max')) : 10,
+                sliderStartFrom = $(element).data('start-from') ? parseInt($(element).data('start-from')) : sliderMin,
+                sliderStartTo = $(element).data('start-to') ? parseInt($(element).data('start-to')) : sliderMax;
             noUiSlider.create(element, {
-                start: [500, 30000],
+                start: [sliderStartFrom, sliderStartTo],
                 connect: true,
                 range: {
-                    'min': [500],
-                    'max': [30000]
+                    'min': [sliderMin],
+                    'max': [sliderMax]
                 },
                 format: {
                     // 'to' the formatted value. Receives a number.

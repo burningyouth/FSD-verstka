@@ -1,0 +1,15 @@
+mixin checkbox(label, id, checked, classModifier)
+    .checkbox(class=classModifier)
+        if checked == 'checked'
+            input(type="checkbox", name=id, id=id, checked).checkbox__input
+        else
+            input(type="checkbox", name=id, id=id).checkbox__input
+        label(for=id).checkbox__label-box
+            if block
+                if label
+                    strong.checkbox__label.checkbox__label_rich= label
+                    span.checkbox__label
+                        block
+            else
+                if label
+                    span.checkbox__label= label

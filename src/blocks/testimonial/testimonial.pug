@@ -1,0 +1,24 @@
+mixin testimonial(photoSrc, likes, name, time, classModifier)
+    .testimonial(class=classModifier)
+        .testimonial__right
+            if photoSrc
+                img(src=photoSrc, alt="testimonial").testimonial__photo 
+            else
+                img(src='assets/img/no-photo.jpg', alt="no photo").testimonial__photo 
+            button.like-button
+                if likes
+                    span.like-button__counter= likes
+                else
+                    span.like-button__counter 0
+        div
+            .testimonial__name
+                if name
+                    strong= name 
+                    br
+                if time
+                    span= time
+            .testimonial__text
+                if block
+                    block
+                else
+                    p Нет контента!

@@ -1,0 +1,35 @@
+.transition(@rest...){
+    transition-property: @rest;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+.margin-generator(@iterator: 1, @length: 10, @step: 5) when (@iterator <= @length) {
+    @postfix: @step * @iterator;
+    @margin: @postfix * 1px;
+    @next: @iterator + 1;
+    
+    .mr-@{postfix} {
+      margin-right: @margin;
+    }
+
+    .ml-@{postfix} {
+        margin-left: @margin;
+    }
+    
+    .mt-@{postfix} {
+        margin-top: @margin;
+    }
+    
+    .mb-@{postfix} {
+        margin-bottom: @margin;
+    }
+
+    .margin-generator(@next, @length, @step);
+}
+
+.gradient-color(@gradient){
+    background-image: @gradient;
+    color:transparent;
+    background-clip: text;
+}

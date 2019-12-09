@@ -1,0 +1,12 @@
+mixin checkbox-list(label)
+    .checkbox-list
+        if label
+            .checkbox-list__label= label
+        else
+            .checkbox-list__label no label
+        .checkbox-list__expand-icon
+        .checkbox-list__list
+            if block
+                block
+            else
+                p Нет контента!

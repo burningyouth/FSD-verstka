@@ -1,0 +1,8 @@
+mixin form-group(title, classModifier)
+    .form-group(class=classModifier)
+        if title
+            h3.form-group__title=title
+        if block
+            block
+        else
+            p Нет контента!

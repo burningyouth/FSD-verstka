@@ -60,6 +60,25 @@ module.exports = {
         name: '[name].[ext]'
       }
     }, {
+      test: /\.s[ac]ss$/i,
+      use: [
+        'style-loader',
+        MiniCssExtractPlugin.loader,
+        {
+          loader: 'css-loader',
+          options: { 
+            sourceMap: true,
+            url: false
+          }
+        }, {
+          loader: 'postcss-loader',
+          options: { sourceMap: true, config: { path: `./postcss.config.js` } }
+        }, {
+          loader: 'sass-loader',
+          options: { sourceMap: true }
+        }
+      ],
+    }, {
       test: /\.less$/,
       use: [
         'style-loader',

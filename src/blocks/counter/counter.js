@@ -44,6 +44,8 @@ $(document).ready(function(){
 
     buttons.on('click touch', function (e) {
 
+        e.preventDefault();
+
         let counter = $(this).parent().find('.counter__input'),
             button = $(this),
             max = counter.attr('max') ? parseInt(counter.attr('max')) : Infinity,

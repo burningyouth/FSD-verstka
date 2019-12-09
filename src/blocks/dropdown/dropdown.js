@@ -40,10 +40,11 @@ $(document).ready(function(){
                 fieldButtonClear = dropdown.find('.dropdown__button.dropdown__button_clear'),
                 fieldCounters = dropdown.find('.counter__input'),
                 fieldPlaceholder =  $(field).data('placeholder') ? $(field).data('placeholder') : '',
+                fieldText = fieldPlaceholder,
                 fieldValueTemplate = generateTemplateString($(field).data('value-format')),
                 restrictedValue = $(field).data('restricted-value') ? parseInt($(field).data('restricted-value')) : 0,
                 totalCount = 0,
-                countersArr = [];
+                countersArr = []
 
             fieldCounters.each( (index, counter) => {
                 
@@ -60,7 +61,7 @@ $(document).ready(function(){
                 let textTemplate = fieldValueTemplate({total: totalCount, counters: countersArr});
                 if (restrictedValue != null){
                     let key = 0;
-                    text = []; 
+                    fieldText = []; 
                     textSplitted = textTemplate.split(', ');
                     textSplitted.forEach((splitted) => {
                         let counterNum = parseInt(splitted.match(/\d+/));
@@ -68,29 +69,31 @@ $(document).ready(function(){
                             let regexCheckArray = /\[(.+)\s*\;\s*(.+)\s*\;\s*(.+)\]/g;
                             regexCheckArray = regexCheckArray.exec(splitted);
                             if(regexCheckArray === null){
-                                text[key] = splitted; 
+                                fieldText[key] = splitted; 
                             }else{
                                 if(counterNum >= 5){
-                                    text[key] = counterNum + " " + regexCheckArray[3];
+                                    fieldText[key] = counterNum + " " + regexCheckArray[3];
                                 }else if(counterNum >= 2 && counterNum < 5){
-                                    text[key] = counterNum + " " + regexCheckArray[2];
+                                    fieldText[key] = counterNum + " " + regexCheckArray[2];
                                 }else{
-                                    text[key] = counterNum + " " + regexCheckArray[1];
+                                    fieldText[key] = counterNum + " " + regexCheckArray[1];
                                 }
                             }
                             key++;
                         }
                     });
-                    text = text.join(', ');
+                    fieldText = fieldText.join(', ');
                 }else{
-                    text = textTemplate;
+                    fieldText = textTemplate;
                 }
             }
-            $(field).text(text);
+            $(field).text(fieldText);
 
             fieldButtonApply.on('click touch', function (e) {
+
+                e.preventDefault();
+                
                 totalCount = 0;
-                let text = fieldPlaceholder;
                 fieldCounters.each( (index, counter) => {
                     
                     let counterValue = parseInt($(counter).val());
@@ -98,12 +101,13 @@ $(document).ready(function(){
                     totalCount += counterValue;
                     countersArr[index] = counterValue;
                 });
+
                 if(totalCount > 0){
                     if(fieldButtonClear) fieldButtonClear.removeClass('dropdown__button_invisible');
                     let textTemplate = fieldValueTemplate({total: totalCount, counters: countersArr});
                     if (restrictedValue != null){
                         let key = 0;
-                        text = []; 
+                        fieldText = []; 
                         textSplitted = textTemplate.split(', ');
                         textSplitted.forEach((splitted) => {
                             let counterNum = parseInt(splitted.match(/\d+/));
@@ -111,28 +115,29 @@ $(document).ready(function(){
                                 let regexCheckArray = /\[(.+)\s*\;\s*(.+)\s*\;\s*(.+)\]/g;
                                 regexCheckArray = regexCheckArray.exec(splitted);
                                 if(regexCheckArray === null){
-                                    text[key] = splitted; 
+                                    fieldText[key] = splitted; 
                                 }else{
                                     if(counterNum >= 5){
-                                        text[key] = counterNum + " " + regexCheckArray[3];
+                                        fieldText[key] = counterNum + " " + regexCheckArray[3];
                                     }else if(counterNum >= 2 && counterNum < 5){
-                                        text[key] = counterNum + " " + regexCheckArray[2];
+                                        fieldText[key] = counterNum + " " + regexCheckArray[2];
                                     }else{
-                                        text[key] = counterNum + " " + regexCheckArray[1];
+                                        fieldText[key] = counterNum + " " + regexCheckArray[1];
                                     }
                                 }
                                 key++;
                             }
                         });
-                        text = text.join(', ');
+                        fieldText = fieldText.join(', ');
                     }else{
-                        text = textTemplate;
+                        fieldText = textTemplate;
                     }
                 }
-                $(field).text(text);
+                $(field).text(fieldText);
             });
 
             fieldButtonClear.on('click touch', function (e) {
+                e.preventDefault();
                 fieldCounters.each( (index, counter) => {
                     $(counter).val(0);
                     $(counter).trigger( "change" );

@@ -1,0 +1,10 @@
+mixin form-card(action, method)
+    form(action=action, method=method).form-card
+        if block
+            block
+        else
+            p Нет контента!
+
+include ./__title/form-card__title.pug
+
+include ./__footer/form-card__footer.pug

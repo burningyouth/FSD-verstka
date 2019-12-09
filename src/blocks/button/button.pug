@@ -1,0 +1,11 @@
+mixin button(text, type, icon, classModifier)
+    button(type=type, class=classModifier).button= text
+        if icon
+            span.button__icon= icon
+
+mixin button_link(text, href, icon, classModifier)
+    a(href=href, class=classModifier).button= text
+        if icon
+            span.button__icon= icon
+
+include ./_block/button_block.pug

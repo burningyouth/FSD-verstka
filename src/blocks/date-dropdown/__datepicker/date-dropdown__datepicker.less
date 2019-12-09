@@ -1,10 +1,7 @@
-@import '../../../less/mixins.less';
+@import '../../../less/import.less';
 
 .date-dropdown__datepicker{
-    display: block;
-    position: relative;
     width: 321.2px;
-    height: 369px;
     background: #FFFFFF;
     border: 1px solid @dark-shade25;
     box-sizing: border-box;
@@ -14,6 +11,11 @@
 
     .datepicker--nav-action, .datepicker--nav-title{
         background: none !important;
+    }
+
+    .datepicker--pointer {
+        border-top-color: @dark-shade25;
+        border-right-color: @dark-shade25;
     }
 
     .datepicker--content{
