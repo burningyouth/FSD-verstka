@@ -5,135 +5,227 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        link(rel="stylesheet", href="./assets/css/kit.css")
         title UI-kit
-    body.body
-        +button_block('Выбрать номер', 'text', 'arrow_forward')
+    body.basic-text
 
-        h2.item-title.mt-30 швошпшк кошутштпшук уштктш ушк 
+        header
+            +navbar
+                +navbar
+                li.navbar__item
+                    a(href='#').navbar__link.navbar__link_active Home
+                li.navbar__item
+                    a(href='#').navbar__link About Us
+                li.navbar__item
+                    a(href="#services").navbar__link.navbar-dropdown__toggler#services__toggler Services
+                    ul(data-toggler="#services__toggler").navbar-dropdown__list#services
+                        li
+                            a(href="#").navbar__link first
+                        li
+                            a(href="#").navbar__link second
+                        li
+                            a(href="#").navbar__link third
+                li.navbar__item
+                    a(href='#').navbar__link Careers
+                li.navbar__item
+                    a(href='#').navbar__link News
+                li.navbar__item
+                    a(href='#').navbar__link Documentation
+                li.navbar__item
+                    +button_link('login', '#', '', 'ml-lg-30 mr-lg-20 mb-lg-0 mb-20 button_slim button_outline')
+                li.navbar__item
+                    +button_link('register', '#', '', 'button_slim')
 
-        .mt-30
-            +form-group('Text field')
-                +text-field_subscription('Placeholder', 'text1', 'arrow_forward')
+        main.main
+            .container.mt-30.mb-50
+                +button_block('Выбрать номер', 'text', 'arrow_forward')
 
-        .mt-30
-            +form-group('Text field')
-                +text-field('W/icons', 'text1')
+                h2.item-title швошпшк кошутштпшук уштктш ушк 
 
-        .form-group.mt-30
-            a(href="#").link.mr-10 Click me
-            a(href="#").link.link_faded Click me
+                .mt-30
+                    +form-group('Text field')
+                        +text-field_subscription('Placeholder', 'text1', 'arrow_forward')
 
-        .mt-30
-            +checkbox('Можно курить', 'checkbox1', 'checkbox1')
-        .mt-30
-            +checkbox('Можно курить', 'checkbox2', 'checkbox1', 'checked')
-                |Lorem ipsum dolor sit amet consectetur,  
+                .mt-30
+                    +form-group('Text field')
+                        +text-field('W/icons', 'text1')
+
+                .form-group.mt-30
+                    +link('#','mr-10')
+                        |Click me
+                    +link('#','link_faded')
+                        |Click me
+
+                .mt-30
+                    +checkbox('Можно курить', 'checkbox1', 'checkbox1')
+                .mt-30
+                    +checkbox('Можно курить', 'checkbox2', 'checkbox1', 'checked')
+                        |Lorem ipsum dolor sit amet consectetur,  
+                        br
+                        |adipisicing elit. Quae, sequi!
+                .radio-button.mt-30
+                    input(type="checkbox", id="radio", name='radio1', checked).radio-button__input
+                    label(for="radio").radio-button__label Можно курить
+
                 br
-                |adipisicing elit. Quae, sequi!
-        .radio-button.mt-30
-            input(type="checkbox", id="radio", name='radio1', checked).radio-button__input
-            label(for="radio").radio-button__label Можно курить
+                .toggle.mt-30
+                    input(type="checkbox" id="toggle" checked).toggle__input
+                    label(for="toggle").toggle__label Можно курить
 
-        br
-        .toggle.mt-30
-            input(type="checkbox" id="toggle" checked).toggle__input
-            label(for="toggle").toggle__label Можно курить
-        
-        .mt-30
-            +form-group('Like buttons')
-                +like-button(12, 'liked')
-                .mr-10
-                +like-button(1)
-        .mt-30
-            +rating(4)
-        .mt-30
-            +rating(2)
+                .mt-30
+                    +form-group('Like buttons')
+                        +like-button(12, 'liked')
+                        .mr-10
+                        +like-button(1)
+                .mt-30
+                    +rating(4)
+                .mt-30
+                    +rating(2)
 
-        .pagination.mt-30
-            a(href="#").pagination__arrow.pagination__arrow_prev
-            a(href="#").pagination__link 1
-            a(href="#").pagination__link.pagination__link_active 2
-            a(href="#").pagination__link 3
-            a(href="#").pagination__link ...
-            a(href="#").pagination__link 15
-            a(href="#").pagination__arrow.pagination__arrow_next
-            span.pagination__label 1 – 12 из 100+ вариантов аренды
+                .pagination.basic-text.mt-30
+                    a(href="#").pagination__arrow.pagination__arrow_prev
+                    a(href="#").pagination__link 1
+                    a(href="#").pagination__link.pagination__link_active 2
+                    a(href="#").pagination__link 3
+                    a(href="#").pagination__link ...
+                    a(href="#").pagination__link 15
+                    a(href="#").pagination__arrow.pagination__arrow_next
+                    span.pagination__label 1 – 12 из 100+ вариантов аренды
+                .mt-30
+                    +bullet-list('Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
 
-        .mt-30
-            +dropdown('Сколько гостей', '${total} [гость;гостей;гостей]', '0')
-                +dropdown__row('взрослые', 'count11', '0', '12', '0')
-                +dropdown__row('дети', 'count12', '0', '12', '0')
-                +dropdown__row('младенцы', 'count13', '0', '12', '0')
-        .mt-30
-            +dropdown('Выберите удобства', '${counters[0]} [спальня;спальни;спален], ${counters[1]} [кровать;кровати;кроватей], ${counters[2]} [ванная комната;ванные комнаты;ванных комнат]', '0')
-                +dropdown__row('спальни', 'count21', '0', '12', '0')
-                +dropdown__row('кровати', 'count22', '0', '12', '0')
-                +dropdown__row('ванные комнаты', 'count23', '0', '12', '0')
-        .mt-30
-            +bullet-list('Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
+                .mt-30
+                    +text-with-icon('insert_emoticon')
+                        strong Комфорт 
+                        br
+                        span Шумопоглощающие стены
 
-        .mt-30
-            +text-with-icon('insert_emoticon')
-                strong Комфорт 
-                br
-                span Шумопоглощающие стены
+                .mt-30
+                    +testimonial("assets/img/testimonial.jpg", '12', 'Мурад Сарафанов', '5 дней назад')
+                        |Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+                .mt-30
+                    +checkbox-list('expandable checkbox list')
+                        +checkbox('Можно курить', 'check1')
+                        +checkbox('Можно курить 2', 'check2', 'checked')
+                        +checkbox('Можно курить 3', 'check3')
+                .mt-30
+                    +range-slider('500', '30000', '500', '30000', 'range1')
+                .mt-30
+                    +form-card('', 'POST')
+                        +form-card__title('Найдём номера под ваши пожелания')
+                        .mb-20
+                            .w-100.w-50-xs.pr-xs-10.pr-0.mb-20.mb-xs-0.d-inline-block
+                                +form-group('прибытие')
+                                    +date-dropdown('ДД.ММ.ГГ', 'arrival')
+                            .w-100.w-50-xs.pl-xs-10.pl-0.d-inline-block
+                                +form-group('выезд')
+                                    +date-dropdown('ДД.ММ.ГГ', 'departure', 'bottom right')
+                        .mb-30
+                            +form-group('гости', 'with-counter-dropdown')
+                                +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
+                                    +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
+                                    +counter-dropdown__row('дети',  'guests-children', '0', '12', '0')
+                                    +counter-dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
+                        +button_block('подобрать номер', 'submit', 'arrow_forward')
 
-        .mt-30
-            +testimonial("assets/img/testimonial.jpg", '12', 'Мурад Сарафанов', '5 дней назад')
-                |Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
-        .mt-30
-            +checkbox-list('expandable checkbox list')
-                +checkbox('Можно курить', 'check1')
-                +checkbox('Можно курить 2', 'check2', 'checked')
-                +checkbox('Можно курить 3', 'check3')
-        .mt-30
-            +range-slider('500', '30000', '500', '30000')
-        .mt-30
-            +form-card('', 'POST')
-                +form-card__title('Найдём номера под ваши пожелания')
-                .row.mb-20
-                    .col-6
-                        +form-group('прибытие')
-                            +date-dropdown('ДД.ММ.ГГ', 'arrival')
-                    .col-6
-                        +form-group('выезд')
-                            +date-dropdown_filter('ДД.ММ.ГГ', 'departure')
-                .mb-30
-                    +form-group('гости')
-                        +dropdown('Сколько гостей', '${total} [гость;гостей;гостей]', '0')
-                            +dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
-                            +dropdown__row('дети',  'guests-children', '0', '12', '0')
-                            +dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
-                +button_block('подобрать номер', 'submit', 'arrow_forward')
+                .mt-30
+                    +form-card('', 'POST')
+                        +form-card__title('Регистрация аккаунта')
+                        +form-group('', 'mb-30')
+                            +text-field('Имя', 'name', 'mb-10')
+                            +text-field('Фамилия', 'lastname', 'mb-10')
+                            div
+                                +radio-button('Мужчина', 'men', 'sex', 'checked', 'mr-20')
+                                +radio-button('Женщина', 'woman', 'sex')
+                        +form-group('Дата рождения', 'mb-20')
+                            +date-dropdown('ДД.ММ.ГГ', 'birthday')
+                        +form-group('Данные для входа на сервис', 'mb-20')
+                            +text-field('Email', 'email', 'mb-10')
+                            +text-field('Пароль', 'password', 'mb-10')
+                            +toggle('Получать спецпредложения', 'special-offers')
+                        +button_block('перейти к оплате', 'submit', 'arrow_forward')
+                        +form-card__footer('Уже есть аккаунт на Toxin', 'войти', '#')
 
-        .mt-30
-            +form-card('', 'POST')
-                +form-card__title('Регистрация аккаунта')
-                +form-group('', 'mb-30')
-                    +text-field('Имя', 'name', 'mb-10')
-                    +text-field('Фамилия', 'lastname', 'mb-10')
-                    div
-                        +radio-button('Мужчина', 'men', 'sex', 'checked', 'mr-20')
-                        +radio-button('Женщина', 'woman', 'sex')
-                +form-group('Дата рождения', 'mb-20')
-                    +date-dropdown('ДД.ММ.ГГ', 'birthday')
-                +form-group('Данные для входа на сервис', 'mb-20')
-                    +text-field('Email', 'email', 'mb-10')
-                    +text-field('Пароль', 'password', 'mb-10')
-                    +toggle('Получать спецпредложения', 'special-offers')
-                +button_block('перейти к оплате', 'submit', 'arrow_forward')
-                +form-card__footer('Уже есть аккаунт на Toxin', 'войти', '#')
-        
-        .mt-30
-            +form-card('', 'POST')
-                +form-card__title('Войти')
-                +form-group('', 'mb-20')
-                    +text-field('Email', 'email', 'mb-10')
-                    +text-field('Пароль', 'password')
-                +button_block('войти', 'submit', 'arrow_forward')
-                +form-card__footer('Нет аккаунта на Toxin?', 'создать', '#')
+                .mt-30
+                    +form-card('', 'POST')
+                        +form-card__title('Войти')
+                        +form-group('', 'mb-20')
+                            +text-field('Email', 'email', 'mb-10')
+                            +text-field('Пароль', 'password')
+                        +button_block('войти', 'submit', 'arrow_forward')
+                        +form-card__footer('Нет аккаунта на Toxin?', 'создать', '#')
 
-                    
-                    
+                .mt-30
+                    +form-card('', 'POST')
+                        .form-card__title
+                            +room-number('888', 'люкс')
+                            +faded-text('9 990₽', 'в сутки')
+                        .mb-20
+                            .w-100.w-50-xs.pr-xs-10.pr-0.mb-20.mb-xs-0.d-inline-block
+                                +form-group('прибытие')
+                                    +date-dropdown('ДД.ММ.ГГ', 'arrival')
+                            .w-100.w-50-xs.pl-xs-10.pl-0.d-inline-block
+                                +form-group('выезд')
+                                    +date-dropdown('ДД.ММ.ГГ', 'departure', 'bottom right')
+                        +form-group('гости', 'mb-20 with-counter-dropdown')
+                            +counter-dropdown('Сколько гостей', '${total} [гость;гостей;гостей]', '0')
+                                +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
+                                +counter-dropdown__row('дети',  'guests-children', '0', '12', '0')
+                                +counter-dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
+                        +form-card__checkout-item('9 990₽ х 4 суток', '39 960₽')
+                        +form-card__checkout-item('Сбор за услуги: скидка 2 179₽', '0₽', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.')
+                        +form-card__checkout-item('Сбор за дополнительные услуги', '300₽', 'Контент тултипа!')
+                        +form-card__checkout-total('Итого', '38 081₽')
+                        +button_block('забронировать', 'submit', 'arrow_forward')
+
+                .mt-30.mb-20
+                    .room-card
+                        .room-card__slider
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        .room-card__description
+                            .room-card__row
+                                +room-number('888', 'люкс')
+                                +faded-text('9 990₽', 'в сутки')
+                            .room-card__divider
+                            .room-card__row
+                                +rating(5)
+                                +faded-text('145', 'отзывов')
                         
+        footer
+            +prefooter_only-text('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
+                .prefooter__social-icons
+                    +social-icon('fa-twitter', '#')
+                    +social-icon('fa-facebook-square', '#')
+                    +social-icon('fa-instagram', '#')
+            +prefooter
+                .prefooter__column
+                    +logo
+                    div Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+                .prefooter__column
+                    .prefooter__column-label.cta-text Navigation
+                    a(href='#').prefooter__link About Us
+                    a(href='#').prefooter__link News
+                    a(href='#').prefooter__link Support
+                    a(href='#').prefooter__link Products
+                .prefooter__column
+                    .prefooter__column-label.cta-text ABOUT US
+                    a(href='#').prefooter__link Who we are
+                    a(href='#').prefooter__link Our team
+                    a(href='#').prefooter__link Careers
+                    a(href='#').prefooter__link Investors
+                .prefooter__column
+                    .prefooter__column-label.cta-text Support
+                    a(href='#').prefooter__link Documentation
+                    a(href='#').prefooter__link Community
+                    a(href='#').prefooter__link Get in Touch
+                .prefooter__column
+                    .prefooter__column-label.cta-text Subscribe to our newsletter
+                    div Receive our latest news and promotions in your inbox!
+                    +text-field_subscription('Your email address', 'subscribe', 'arrow_forward')
+
+            +footer
+                .footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+                .footer__social-icons
+                    +social-icon('fa-twitter', '#')
+                    +social-icon('fa-facebook-square', '#')
+                    +social-icon('fa-instagram', '#')

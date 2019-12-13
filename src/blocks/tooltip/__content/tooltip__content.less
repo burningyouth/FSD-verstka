@@ -1,0 +1,23 @@
+@import '../../../less/import.less';
+
+.tooltip__content{
+    .tooltipster-box{
+        background: #FFFFFF;
+        border: 1px solid fade(@dark-shade, 12%);
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    .tooltipster-content{
+        color: black;
+    }
+    .tooltipster-arrow {
+        bottom: -1px !important;
+        .tooltipster-arrow-border{
+            border-top-color:fade(@dark-shade, 12%);
+        }
+        .tooltipster-arrow-background{
+            border-top-color: #FFFFFF;
+            top: -1px;
+        }
+    }
+}

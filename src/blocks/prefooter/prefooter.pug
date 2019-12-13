@@ -1,0 +1,42 @@
+mixin prefooter
+    .prefooter
+        .prefooter__content.container.basic-text
+            if block
+                block
+
+mixin prefooter_only-text(text)
+    .prefooter
+        .prefooter__content.prefooter__content_centered.container.basic-text
+            +logo
+            div= text
+            if block
+                block
+
+mixin prefooter_completed
+    .prefooter
+        .prefooter__content.container.basic-text
+            .prefooter__column
+                +logo
+                div Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+            .prefooter__column
+                .prefooter__column-label.cta-text навигация
+                a(href='#').prefooter__link О нас
+                a(href='#').prefooter__link Новости
+                a(href='#').prefooter__link Служба поддержки
+                a(href='#').prefooter__link Услуги
+            .prefooter__column
+                .prefooter__column-label.cta-text о нас
+                a(href='#').prefooter__link О сервисе
+                a(href='#').prefooter__link Наша команда
+                a(href='#').prefooter__link Вакансии
+                a(href='#').prefooter__link Инвесторы
+            .prefooter__column
+                .prefooter__column-label.cta-text Служба поддержки
+                a(href='#').prefooter__link Соглашения
+                a(href='#').prefooter__link Сообщества
+                a(href='#').prefooter__link Связь с нами
+            .prefooter__column
+                .prefooter__column-label.cta-text Подписка
+                div Получайте специальные предложения и новости сервиса
+                form(action="#", method="post")
+                    +text-field_subscription('Email', 'subscribe', 'arrow_forward')

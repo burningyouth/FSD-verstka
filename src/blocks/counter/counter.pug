@@ -1,5 +1,5 @@
 mixin counter(id, min, max, value, classModifier)
     .counter(class=classModifier)
         button(type="text").counter__handler.counter__handler_minus
-        input(type="number", name=id, id=id, value=value, min=min, max=max, readonly).counter__input
+        input(type="number", name=id, id=id, value=value, min=min, max=max, readonly).counter__input.cta-text
         button(type="text").counter__handler.counter__handler_plus

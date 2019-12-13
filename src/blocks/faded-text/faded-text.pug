@@ -1,0 +1,6 @@
+mixin faded-text(primary, secondary)
+    if primary
+        span.faded-text= primary
+            |&nbsp;
+            if secondary
+                span.faded-text__secondary= secondary

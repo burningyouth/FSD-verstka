@@ -1,5 +1,5 @@
 mixin testimonial(photoSrc, likes, name, time, classModifier)
-    .testimonial(class=classModifier)
+    .testimonial(class=classModifier).basic-text
         .testimonial__right
             if photoSrc
                 img(src=photoSrc, alt="testimonial").testimonial__photo 

@@ -1,0 +1,35 @@
+@import '../../../less/import.less';
+
+.burger__main{
+    position: relative;
+    display: block;
+    text-decoration: none;
+    width: 30px;
+    height: 3px;
+    background: @dark-shade75;
+    border-radius: 1.5px;
+
+    .transition(background);
+
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: @dark-shade75;
+        border-radius: 1.5px;
+        
+        .transition(transform, top, bottom);
+    }
+
+    &::before{
+        top: -9px;
+    }
+
+    &::after{
+        bottom: -9px;
+    }
+
+    
+}

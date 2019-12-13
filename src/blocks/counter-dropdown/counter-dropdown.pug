@@ -1,0 +1,14 @@
+mixin counter-dropdown(placeholder, valueFormat, restrictedValue, classModifier)
+    .counter-dropdown(class=classModifier)
+        .counter-dropdown__field.basic-text(data-placeholder=placeholder, data-restricted-value=restrictedValue, data-value-format=valueFormat)= placeholder
+        .counter-dropdown__expand-icon
+        .counter-dropdown__list.cta-text
+            if block
+                block
+            else
+                p Нет контента!
+            .counter-dropdown__buttons
+                button.counter-dropdown__button.counter-dropdown__button_clear.cta-text Очистить
+                button.counter-dropdown__button.counter-dropdown__button_apply.cta-text Применить
+
+include ./__row/counter-dropdown__row.pug

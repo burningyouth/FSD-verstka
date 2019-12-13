@@ -1,0 +1,20 @@
+@import '../../../less/import.less';
+
+.navbar__items{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 0;
+   list-style: none;
+}
+
+@media(max-width: @lg){
+    .navbar__items{
+        width: 100%;
+        flex-direction: column;
+        max-height: 0;
+        .transition(max-height, margin-top);
+        transition-duration: .15s;
+        overflow-y: auto;
+    }
+}

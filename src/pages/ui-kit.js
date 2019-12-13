@@ -6,6 +6,7 @@ function importAll(r) {
     });
 }
 
+import 'tooltipster/dist/css/tooltipster.bundle.min.css';
 import 'air-datepicker/dist/css/datepicker.min.css';
 import '../less/generators.less';
 

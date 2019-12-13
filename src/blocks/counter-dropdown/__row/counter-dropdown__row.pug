@@ -1,0 +1,7 @@
+mixin counter-dropdown__row(label, id, min, max, value, classModifier)
+    .counter-dropdown__row(class=classModifier)
+        if label
+            .counter-dropdown__counter-label= label
+        else
+            .counter-dropdown__counter-label Без лейбла
+        +counter(id, min, max, value)

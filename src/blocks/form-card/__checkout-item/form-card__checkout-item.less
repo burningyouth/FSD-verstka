@@ -1,0 +1,21 @@
+@import '../../../less/import.less';
+
+.form-card__checkout-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    line-height: 24px;
+
+    color: @dark-shade75;
+
+    & > *:not(:last-of-type){
+        margin-right: 10px;
+        .tooltip{
+            margin-left: 5px;
+            margin-bottom: -4px;
+        }
+    }
+}

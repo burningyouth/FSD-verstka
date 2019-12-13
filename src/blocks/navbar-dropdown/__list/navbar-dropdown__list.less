@@ -1,0 +1,41 @@
+@import '../../../less/import.less';
+
+.navbar-dropdown__list{
+    position: absolute;
+    left: -30px;
+    top: 44px;
+    z-index: 1000;
+
+    width: ~'calc(100% + 60px)';
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px fade(@dark-shade, 5%);
+    border: 0px solid transparent;
+    box-sizing: content-box;
+
+    list-style: none;
+    max-height: 0px;
+    overflow: hidden;
+
+    .transition(max-height, padding, border-color);
+
+    .navbar__link{
+        display: block;
+        padding: 15px;
+        &:hover{
+            background: fade(@dark-shade, 5%);
+        }
+    }
+}
+
+@media(max-width: @lg){
+    .navbar-dropdown__list{
+        position: relative;
+        top: 10px;
+        left: -30px;
+        background: none;
+        box-shadow: none;
+        text-align: center;
+        border-radius: 4px;
+        border-width: 1px;
+    }
+}

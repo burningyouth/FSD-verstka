@@ -2,13 +2,13 @@ mixin like-button(count, liked, classModifier)
     if liked == 'liked'
         button.like-button.like-button_liked(class=classModifier)
             if count
-                span.like-button__counter= count
+                span.like-button__counter.basic-text= count
             else
-                span.like-button__counter 0
+                span.like-button__counter.basic-text 0
     else
         button.like-button(class=classModifier)
             if count
-                span.like-button__counter= count
+                span.like-button__counter.basic-text= count
             else
-                span.like-button__counter 0
+                span.like-button__counter.basic-text 0
 

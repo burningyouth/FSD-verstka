@@ -1,9 +1,9 @@
 mixin checkbox-list(label)
     .checkbox-list
         if label
-            .checkbox-list__label= label
+            .checkbox-list__label.cta-text= label
         else
-            .checkbox-list__label no label
+            .checkbox-list__label.cta-text no label
         .checkbox-list__expand-icon
         .checkbox-list__list
             if block

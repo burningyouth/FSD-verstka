@@ -1,4 +1,4 @@
-mixin range-slider(min, max, startFrom, startTo, classModifier)
+mixin range-slider(min, max, startFrom, startTo, id, classModifier)
     .range-slider(class=classModifier)
-        .range-slider__value
-        .range-slider__input(data-min=min, data-max=max, data-start-from=startFrom, data-start-to=startTo)
+        .range-slider__value.basic-text
+        .range-slider__input(data-min=min, data-max=max, data-start-from=startFrom, data-start-to=startTo, id=id, name=id)

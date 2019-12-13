@@ -1,0 +1,14 @@
+mixin footer
+    .footer
+        .footer__content.basic-text.container
+            if block
+                block
+
+mixin footer_completed
+    .footer
+        .footer__content.basic-text.container
+            .footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+            .footer__social-icons
+                +social-icon('fa-twitter', '#')
+                +social-icon('fa-facebook-square', '#')
+                +social-icon('fa-instagram', '#')

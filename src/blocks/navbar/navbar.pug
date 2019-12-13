@@ -1,0 +1,47 @@
+mixin navbar
+    .navbar
+        .navbar__content.container
+            +logo
+            .show-lg
+                button(data-target='#navbar__items', data-class-mod= 'navbar__items_collapsed', data-self-class-mod='burger_active').burger.toggle-class-button
+                    span.burger__main
+            ul.navbar__items.basic-text#navbar__items
+                if block
+                    block
+
+mixin navbar_completed
+    .navbar
+        .navbar__content.container
+            +logo
+            .show-lg
+                button(data-target='#navbar__items', data-class-mod= 'navbar__items_collapsed', data-self-class-mod='burger_active').burger.toggle-class-button
+                    span.burger__main
+            ul.navbar__items.basic-text#navbar__items
+                li.navbar__item.navbar__item_small-margin
+                    a(href='#').navbar__link О нас
+                li.navbar__item.navbar__item_small-margin
+                    a(href="#services").navbar__link.navbar-dropdown__toggler#services__toggler Услуги
+                    ul(data-toggler="#services__toggler").navbar-dropdown__list#services
+                        li
+                            a(href="#").navbar__link first
+                        li
+                            a(href="#").navbar__link second
+                        li
+                            a(href="#").navbar__link third
+                li.navbar__item.navbar__item_small-margin  
+                    a(href='#').navbar__link Вакансии
+                li.navbar__item.navbar__item_small-margin  
+                    a(href='#').navbar__link Новости
+                li.navbar__item.navbar__item_small-margin  
+                    a(href="#agreement").navbar__link.navbar-dropdown__toggler#agreement__toggler Соглашения
+                    ul(data-toggler="#agreement__toggler").navbar-dropdown__list#agreement
+                        li
+                            a(href="#").navbar__link first
+                        li
+                            a(href="#").navbar__link second
+                        li
+                            a(href="#").navbar__link third
+                li.navbar__item.navbar__item_small-margin    
+                    +button_link('войти', 'sign-in.html', '', 'button_slim button_outline')
+                li.navbar__item.navbar__item_small-margin
+                    +button_link('зарегистрироваться', 'sign-up.html', '', 'button_slim')

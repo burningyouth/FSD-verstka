@@ -1,0 +1,8 @@
+include ../../tooltip/tooltip.pug
+
+mixin form-card__checkout-item(label, price, tooltip)
+    .form-card__checkout-item.basic-text
+        div= label
+            if tooltip
+                +tooltip(tooltip)
+        div= price
