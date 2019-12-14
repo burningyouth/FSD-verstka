@@ -1,0 +1,19 @@
+include ../pug/mixins.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Войти
+    body.basic-text
+
+        header
+            +navbar_completed
+        main(style="background-image: url(./assets/img/authorization.jpg)").main.basic-text.authorization-wrapper
+            .container.authorization-wrapper__container.pr-0.pr-xs-20.pl-0.pl-xs-20
+                +form-card__login('#', 'POST')
+        footer
+            +prefooter_completed
+
+            +footer_completed

@@ -5,29 +5,14 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Landing Page
+        title Главная
     body.basic-text
 
         header
             +navbar_completed
         main(style="background-image: url(./assets/img/landing.jpg)").main.basic-text.landing-page-wrapper
             .container.landing-page-wrapper__container.pr-0.pr-xs-20.pl-0.pl-xs-20
-                +form-card('', 'POST')
-                    +form-card__title('Найдём номера под ваши пожелания')
-                    .mb-20
-                        .w-100.w-50-xs.pr-xs-10.pr-0.mb-20.mb-xs-0.d-inline-block
-                            +form-group('прибытие')
-                                +date-dropdown('ДД.ММ.ГГ', 'arrival')
-                        .w-100.w-50-xs.pl-xs-10.pl-0.d-inline-block
-                            +form-group('выезд')
-                                +date-dropdown('ДД.ММ.ГГ', 'departure', 'bottom right')
-                    .mb-30
-                        +form-group('гости', 'with-counter-dropdown')
-                            +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
-                                +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
-                                +counter-dropdown__row('дети',  'guests-children', '0', '12', '0')
-                                +counter-dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
-                    +button_block('подобрать номер', 'submit', 'arrow_forward')
+                +form-card__search-room('#', 'POST')
                 .landing-page-wrapper__label Лучшие номера для вашей работы, отдыха и просто вдохновения
                         
         footer

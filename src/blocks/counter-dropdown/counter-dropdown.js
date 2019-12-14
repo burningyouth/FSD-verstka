@@ -136,12 +136,12 @@ $(document).ready(function(){
                                 if(regexCheckArray === null){
                                     fieldText[key] = splitted; 
                                 }else{
-                                    if(counterNum >= 5){
-                                        fieldText[key] = counterNum + " " + regexCheckArray[3];
-                                    }else if(counterNum >= 2 && counterNum < 5){
-                                        fieldText[key] = counterNum + " " + regexCheckArray[2];
-                                    }else{
+                                    fieldText[key] = counterNum + " " + regexCheckArray[3];
+
+                                    if(counterNum % 10 == 1 && counterNum % 100 != 1){
                                         fieldText[key] = counterNum + " " + regexCheckArray[1];
+                                    }else if(counterNum % 10 >= 2 && counterNum % 10 <= 4 && counterNum % 100 != 1){
+                                        fieldText[key] = counterNum + " " + regexCheckArray[2];
                                     }
                                 }
                                 key++;

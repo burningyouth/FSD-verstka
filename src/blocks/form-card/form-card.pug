@@ -1,10 +1,3 @@
-mixin form-card(action, method)
-    form(action=action, method=method).form-card
-        if block
-            block
-        else
-            p Нет контента!
-
 include ./__title/form-card__title.pug
 
 include ./__footer/form-card__footer.pug
@@ -12,3 +5,55 @@ include ./__footer/form-card__footer.pug
 include ./__checkout-item/form-card__checkout-item.pug
 
 include ./__checkout-total/form-card__checkout-total.pug
+
+mixin form-card(action, method)
+    form(action=action, method=method).form-card
+        if block
+            block
+        else
+            p Нет контента!
+
+mixin form-card__registration(action, method)
+    form(action=action, method=method).form-card
+        +form-card__title('Регистрация аккаунта')
+        +form-group('', 'mb-20')
+            +text-field('Имя', 'name', 'mb-10')
+            +text-field('Фамилия', 'lastname', 'mb-10')
+            div
+                +radio-button('Мужчина', 'men', 'sex', 'checked', 'mr-20')
+                +radio-button('Женщина', 'woman', 'sex')
+        +form-group('Дата рождения', 'mb-20')
+            +date-dropdown('ДД.ММ.ГГГГ', 'birthday')
+        +form-group('Данные для входа на сервис', 'mb-20')
+            +text-field('Email', 'email', 'mb-10')
+            +text-field('Пароль', 'password', 'mb-10')
+            +toggle('Получать спецпредложения', 'special-offers')
+        +button_block('перейти к оплате', 'submit', 'arrow_forward')
+        +form-card__footer('Уже есть аккаунт на Toxin', 'войти', 'login.html')
+
+mixin form-card__login(action, method)
+    form(action=action, method=method).form-card
+        +form-card__title('Войти')
+        +form-group('', 'mb-20')
+            +text-field('Email', 'email', 'mb-10')
+            +text-field('Пароль', 'password')
+        +button_block('войти', 'submit', 'arrow_forward')
+        +form-card__footer('Нет аккаунта на Toxin?', 'создать', 'registration.html')
+
+mixin form-card__search-room(action, method)
+    form(action=action, method=method).form-card
+        +form-card__title('Найдём номера под ваши пожелания')
+        .mb-20
+            .w-100.w-50-xs.pr-xs-10.pr-0.mb-20.mb-xs-0.d-inline-block
+                +form-group('прибытие')
+                    +date-dropdown('ДД.ММ.ГГГГ', 'arrival')
+            .w-100.w-50-xs.pl-xs-10.pl-0.d-inline-block
+                +form-group('выезд')
+                    +date-dropdown('ДД.ММ.ГГГГ', 'departure', 'bottom right')
+        .mb-30
+            +form-group('гости', 'with-counter-dropdown')
+                +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
+                    +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
+                    +counter-dropdown__row('дети',  'guests-children', '0', '12', '0')
+                    +counter-dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
+        +button_block('подобрать номер', 'submit', 'arrow_forward')

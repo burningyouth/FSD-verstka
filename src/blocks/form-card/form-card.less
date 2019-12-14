@@ -4,7 +4,7 @@
     position: relative;
     display: block;
 
-    max-width: 380px;
+    width: 380px;
     box-sizing: border-box;
     padding: 40px 30px 30px 30px;
 
@@ -15,10 +15,16 @@
     border-radius: 4px;
 
 }
-
+@media(max-width: @md){
+    .form-card{
+        width: 100%;
+    }
+}
 @media(max-width: @xs){
     .form-card{
         box-shadow: none;
         border: none;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
