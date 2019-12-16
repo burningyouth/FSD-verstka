@@ -3,7 +3,6 @@ import 'air-datepicker';
 $(document).ready(function(){
     let dates = $(".date-dropdown:not(.date-dropdown_filter) .date-dropdown__input");
     dates.each((index, dateInput) => {
-        let position = $(dateInput).data('position') ? $(dateInput).data('position') : 'bottom left';
         $(dateInput).datepicker({ 
             classes: 'date-dropdown__datepicker',
             position: 'bottom center',

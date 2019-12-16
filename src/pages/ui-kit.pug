@@ -10,13 +10,12 @@ html(lang="en")
 
         header
             +navbar
-                +navbar
                 li.navbar__item
                     a(href='#').navbar__link.navbar__link_active Home
                 li.navbar__item
                     a(href='#').navbar__link About Us
                 li.navbar__item
-                    a(href="#services").navbar__link.navbar-dropdown__toggler#services__toggler Services
+                    a(href="#services").navbar__link.navbar-dropdown__toggler.dropdown-icon#services__toggler Services
                     ul(data-toggler="#services__toggler").navbar-dropdown__list#services
                         li
                             a(href="#").navbar__link first
@@ -31,7 +30,7 @@ html(lang="en")
                 li.navbar__item
                     a(href='#').navbar__link Documentation
                 li.navbar__item
-                    +button_link('login', '#', '', 'ml-lg-30 mr-lg-20 mb-lg-0 mb-20 button_slim button_outline')
+                    +button_link('login', '#', '', 'button_slim button_outline')
                 li.navbar__item
                     +button_link('register', '#', '', 'button_slim')
 
@@ -142,18 +141,9 @@ html(lang="en")
                         +button_block('забронировать', 'submit', 'arrow_forward')
 
                 .mt-30.mb-20
-                    .room-card
-                        .room-card__slider
-                            img(src="assets/img/room1.jpg", alt="", srcset="")
-                            img(src="assets/img/room2.jpg", alt="", srcset="")
-                        .room-card__description
-                            .room-card__row
-                                +room-number('888', 'люкс')
-                                +faded-text('9 990₽', 'в сутки')
-                            .room-card__divider
-                            .room-card__row
-                                +rating(5)
-                                +faded-text('145', 'отзывов')
+                    +room-card('888', 'люкс', '9 990', '5', '143')
+                        img(src="assets/img/room1.jpg", alt="", srcset="")
+                        img(src="assets/img/room2.jpg", alt="", srcset="")
                         
         footer
             +prefooter_only-text('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')

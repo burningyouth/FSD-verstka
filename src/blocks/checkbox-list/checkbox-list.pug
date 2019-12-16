@@ -1,11 +1,11 @@
-mixin checkbox-list(label)
-    .checkbox-list
+mixin checkbox-list(label, classModifier)
+    .checkbox-list(class=classModifier, data-collapsed='false')
         if label
             .checkbox-list__label.cta-text= label
         else
             .checkbox-list__label.cta-text no label
-        .checkbox-list__expand-icon
-        .checkbox-list__list
+        .checkbox-list__icon.dropdown-icon.dropdown-icon_block
+        .checkbox-list__content
             if block
                 block
             else

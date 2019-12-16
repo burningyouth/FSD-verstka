@@ -14,13 +14,14 @@ mixin navbar_completed
         .navbar__content.container
             +logo
             .show-lg
+                button(data-target='#navbar__filter', data-class-mod= 'navbar__items_collapsed', data-self-class-mod='navbar__icon_active').material-icons.toggle-class-button.navbar__icon search
                 button(data-target='#navbar__items', data-class-mod= 'navbar__items_collapsed', data-self-class-mod='burger_active').burger.toggle-class-button
                     span.burger__main
             ul.navbar__items.basic-text#navbar__items
                 li.navbar__item.navbar__item_small-margin
                     a(href='#').navbar__link О нас
                 li.navbar__item.navbar__item_small-margin
-                    a(href="#services").navbar__link.navbar-dropdown__toggler#services__toggler Услуги
+                    a(href="#services").navbar__link.navbar-dropdown__toggler.dropdown-icon#services__toggler Услуги
                     ul(data-toggler="#services__toggler").navbar-dropdown__list#services
                         li
                             a(href="#").navbar__link first
@@ -33,7 +34,7 @@ mixin navbar_completed
                 li.navbar__item.navbar__item_small-margin  
                     a(href='#').navbar__link Новости
                 li.navbar__item.navbar__item_small-margin  
-                    a(href="#agreement").navbar__link.navbar-dropdown__toggler#agreement__toggler Соглашения
+                    a(href="#agreement").navbar__link.navbar-dropdown__toggler.dropdown-icon#agreement__toggler Соглашения
                     ul(data-toggler="#agreement__toggler").navbar-dropdown__list#agreement
                         li
                             a(href="#").navbar__link first
@@ -45,3 +46,40 @@ mixin navbar_completed
                     +button_link('войти', 'login.html', '', 'button_slim button_outline')
                 li.navbar__item.navbar__item_small-margin
                     +button_link('зарегистрироваться', 'registration.html', '', 'button_slim')
+            .show-lg.navbar__items#navbar__filter
+                .navbar__filter
+                    +form-group('даты пребывания в отеле', 'mb-30')
+                        +date-dropdown_filter('Выберите даты', 'guest-dates')
+                    +form-group('гости', 'with-counter-dropdown mb-30')
+                        +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
+                            +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
+                            +counter-dropdown__row('дети',  'guests-children', '0', '12', '0')
+                            +counter-dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
+                    +form-group('диапазон цены', 'mb-30')
+                        +range-slider('500', '30000', '500', '30000', 'range1')
+                        .caption-text.mt-10 Стоимость за сутки пребывания в номере
+                    +form-group('Checkbox Buttons', 'mb-30')
+                        +checkbox('Можно курить', 'can-smoke', '', 'mt-10 mb-10')
+                        br
+                        +checkbox('Можно с питомцами', 'with-pets', 'checked', 'mb-10')
+                        br
+                        +checkbox('Можно пригласить гостей (до 10 человек)', 'with-guests', 'checked')
+                    +form-group('Доступность', 'mb-30')
+                        +checkbox('Широкий коридор', 'big-width', '', 'mt-10 mb-10')
+                            |Ширина коридоров в номере не менее 91 см.
+                        br
+                        +checkbox('Помощник для инвалидов', 'invali-helper', '', 'mb-10')
+                            |На 1 этаже вас встретит специалист  и проводит до номера.
+                    +form-group('удобства номера', 'with-counter-dropdown mb-30')
+                        +counter-dropdown('Выберите удобства', '${counters[0]} [спальня;спальни;спальней], ${counters[1]} [кровать;кровати;кроватей], ${counters[2]} [ванная комната;ванные комнаты;ванных комнат]', '0')
+                            +counter-dropdown__row('спальни', 'bedrooms', '0', '12', '0')
+                            +counter-dropdown__row('кровати',  'sofas', '0', '12', '0')
+                            //исправить название
+                            +counter-dropdown__row('ванные комнаты', 'vanniy-komnaty', '0', '12', '0')
+                    +checkbox-list('Дополнительные удобства', 'mb-30')
+                        +checkbox('Завтрак', 'breakfast')
+                        +checkbox('Письменный стол', 'desk', 'checked')
+                        +checkbox('Стул для кормления', 'styl', 'checked')
+                        +checkbox('Кроватка', 'krovatka', 'checked')
+                        +checkbox('Телевизор', 'television')
+                        +checkbox('Шампунь', 'shampyn')

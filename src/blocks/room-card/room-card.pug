@@ -1,0 +1,13 @@
+mixin room-card(room, roomType, price, rating, reviews, href, classModifier)
+    .room-card(class=classModifier)
+        .room-card__slider
+            if block
+                block
+        a(href=href).room-card__description
+            .room-card__row
+                +room-number(room, roomType)
+                +faded-text(price+'₽', 'в сутки')
+            .room-card__divider
+            .room-card__row
+                +rating(rating)
+                +faded-text(reviews, 'отзывов')

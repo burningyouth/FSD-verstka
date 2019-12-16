@@ -1,0 +1,103 @@
+include ../pug/mixins.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Главная
+    body.basic-text
+
+        header
+            +navbar_completed
+        main.main.basic-text
+            .container.search-room-main
+                aside.search-room-main__aside
+                    +form-group('даты пребывания в отеле', 'mb-30')
+                        +date-dropdown_filter('Выберите даты', 'guest-dates')
+                    +form-group('гости', 'with-counter-dropdown mb-30')
+                        +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
+                            +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
+                            +counter-dropdown__row('дети',  'guests-children', '0', '12', '0')
+                            +counter-dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
+                    +form-group('диапазон цены', 'mb-30')
+                        +range-slider('500', '30000', '500', '30000', 'range1')
+                        .caption-text.mt-10 Стоимость за сутки пребывания в номере
+                    +form-group('Checkbox Buttons', 'mb-30')
+                        +checkbox('Можно курить', 'can-smoke', '', 'mt-10 mb-10')
+                        br
+                        +checkbox('Можно с питомцами', 'with-pets', 'checked', 'mb-10')
+                        br
+                        +checkbox('Можно пригласить гостей (до 10 человек)', 'with-guests', 'checked')
+                    +form-group('Доступность', 'mb-30')
+                        +checkbox('Широкий коридор', 'big-width', '', 'mt-10 mb-10')
+                            |Ширина коридоров в номере не менее 91 см.
+                        br
+                        +checkbox('Помощник для инвалидов', 'invali-helper', '', 'mb-10')
+                            |На 1 этаже вас встретит специалист  и проводит до номера.
+                    +form-group('удобства номера', 'with-counter-dropdown mb-30')
+                        +counter-dropdown('Выберите удобства', '${counters[0]} [спальня;спальни;спальней], ${counters[1]} [кровать;кровати;кроватей], ${counters[2]} [ванная комната;ванные комнаты;ванных комнат]', '0')
+                            +counter-dropdown__row('спальни', 'bedrooms', '0', '12', '0')
+                            +counter-dropdown__row('кровати',  'sofas', '0', '12', '0')
+                            //исправить название
+                            +counter-dropdown__row('ванные комнаты', 'vanniy-komnaty', '0', '12', '0')
+                    +checkbox-list('Дополнительные удобства', 'mb-30')
+                        +checkbox('Завтрак', 'breakfast')
+                        +checkbox('Письменный стол', 'desk', 'checked')
+                        +checkbox('Стул для кормления', 'styl', 'checked')
+                        +checkbox('Кроватка', 'krovatka', 'checked')
+                        +checkbox('Телевизор', 'television')
+                        +checkbox('Шампунь', 'shampyn')
+
+                .search-room-main__content-wrapper
+                    h1.search-room-main__label.widget-title Номера, которые мы для вас подобрали
+                    .search-room-main__content
+                        +room-card('888', 'люкс', '9 990', '5', '143', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('76', 'люкс', '15 990', '4', '14', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('28', '', '1 990', '2', '13', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('978', 'люкс', '12 990', '4.3', '43', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('120', 'люкс', '3 990', '2.76', '183', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('56', 'люкс', '2 990', '3', '288', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('888', 'люкс', '9 990', '5', '143', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('76', 'люкс', '15 990', '3', '14', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('28', '', '1 990', '3', '13', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="",  srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('978', 'люкс', '12 990', '4', '43', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('120', 'люкс', '3 990', '4', '183', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                        +room-card('56', 'люкс', '2 990', '5', '288', '#', 'search-room-main__room-card')
+                            img(src="assets/img/room1.jpg", alt="", srcset="")
+                            img(src="assets/img/room2.jpg", alt="", srcset="")
+                    .search-room-main__pagination
+                        .pagination.basic-text.mt-30
+                            a(href="#").pagination__link.pagination__link_active 1
+                            a(href="#").pagination__link 2
+                            a(href="#").pagination__link 3
+                            a(href="#").pagination__link ...
+                            a(href="#").pagination__link 15
+                            a(href="#").pagination__arrow.pagination__arrow_next
+                            span.pagination__label 1 – 12 из 100+ вариантов аренды
+        footer  
+            +prefooter_completed
+
+            +footer_completed

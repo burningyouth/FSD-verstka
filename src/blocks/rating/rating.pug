@@ -2,7 +2,10 @@ mixin rating(stars, classModifier)
     .rating(class=classModifier)
         - var i = 0;
         while i < stars
-            span.rating__star.rating__star_active
+            if ( ((stars - i) > 0) && ((stars-i) < 1) )
+                span.rating__star.rating__star_half
+            else
+                span.rating__star.rating__star_active
             - i++
         while i < 5
             span.rating__star

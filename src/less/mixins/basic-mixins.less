@@ -181,7 +181,7 @@
     }
     each(@bp, {
         .show-@{key}{
-            display: none;
+            display: none !important;
         }
         @media (max-width: @value){
             .show-@{key}{
