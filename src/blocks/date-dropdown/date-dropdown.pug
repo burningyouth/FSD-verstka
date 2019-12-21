@@ -1,6 +1,6 @@
 mixin date-dropdown(placeholder, id, classModifier)
-    .date-dropdown(class=classModifier)
+    .date-dropdown.dropdown(class=classModifier)
         input(type="text", name=id, placeholder=placeholder, id=id, readonly).date-dropdown__input.basic-text
-        .date-dropdown__icon.dropdown-icon.dropdown-icon_block
+        .date-dropdown__icon.dropdown__icon.dropdown__icon_block
 
 include ./_filter/date-dropdown_filter.pug

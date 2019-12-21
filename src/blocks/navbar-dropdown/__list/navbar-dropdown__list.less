@@ -13,10 +13,6 @@
     box-sizing: content-box;
 
     list-style: none;
-    max-height: 0px;
-    overflow: hidden;
-
-    .transition(max-height, padding, border-color);
 
     .navbar__link{
         display: block;
@@ -30,9 +26,10 @@
 
 @media(max-width: @lg){
     .navbar-dropdown__list{
+        width: 180px;
         position: relative;
         top: 10px;
-        left: -30px;
+        left: ~"calc(50% - 90px)";
         background: none;
         box-shadow: none;
         text-align: center;

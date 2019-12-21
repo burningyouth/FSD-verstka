@@ -12,8 +12,11 @@
 
 @media(max-width: @lg){
     .navbar__item{
+        display: block;
         margin-left: 0 !important;
-        margin-bottom: 20px;
         text-align: center;
+        &:not(:last-of-type){
+            margin-bottom: 20px;
+        }
     }
 }

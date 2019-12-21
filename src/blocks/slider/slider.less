@@ -1,9 +1,5 @@
 @import '../../less/import.less';
 
-.slider {
-    position: relative;
-}
-
 .bx-controls{
     position: absolute;
     top: 0;
@@ -12,42 +8,45 @@
     height: 100%;
 }
 
-.bx-controls-direction a{
-    position: absolute;
-    z-index: 100;
-    top: ~'calc(50% - 22px)';
-    
-    display: block;
-    
-    width: 44px;
-    height: 44px;
+.bx-controls-direction {
+    display: none;
+    a{
+        position: absolute;
+        z-index: 100;
+        top: ~'calc(50% - 22px)';
+        
+        display: block;
+        
+        width: 44px;
+        height: 44px;
 
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px; 
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
-    text-align: center;
-    line-height: 44px;
-    text-decoration: none;
-    color: white;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px; 
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+        text-align: center;
+        line-height: 44px;
+        text-decoration: none;
+        color: white;
 
-    &.bx-prev{
-        left: 0;
-        transform: rotate(90deg);  
-    }
+        &.bx-prev{
+            left: 0;
+            transform: rotate(90deg);  
+        }
 
-    &.bx-next{
-        right:0;
-        transform: rotate(-90deg);  
+        &.bx-next{
+            right:0;
+            transform: rotate(-90deg);  
+        }
     }
 }
 
@@ -73,6 +72,15 @@
         border-radius: 50%;
         &.active{
             background: #fff;
+        }
+    }
+}
+
+.slider {
+    position: relative;
+    &:hover{
+        .bx-controls-direction{
+            display: block;
         }
     }
 }

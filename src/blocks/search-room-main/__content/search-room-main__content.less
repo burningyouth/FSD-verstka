@@ -1,14 +1,35 @@
 @import '../../../less/import.less';
 
 .search-room-main__content{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-column-gap: 12px;
+    grid-row-gap: 20px;
+}
 
+@media (max-width: @xl){
+    .search-room-main__content{
+        grid-template-columns: auto auto;
+    } 
 }
 
 @media (max-width: @lg){
     .search-room-main__content{
-        justify-content: center;
-    }
+        grid-template-columns: auto auto auto;
+
+    } 
+}
+
+@media (max-width: 872px){
+    .search-room-main__content{
+        grid-template-columns: auto auto;
+
+    } 
+}
+
+@media (max-width: @sm){
+    .search-room-main__content{
+        display: block;
+    } 
 }

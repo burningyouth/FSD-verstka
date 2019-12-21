@@ -10,11 +10,10 @@
 
 @media(max-width: @lg){
     .navbar__items{
+        display: none;
         width: 100%;
-        flex-direction: column;
-        max-height: 0;
-        .transition(max-height, margin-top);
-        transition-duration: .15s;
+        margin-top: 15px;
+        max-height: 100vh;
         overflow-y: auto;
     }
 }

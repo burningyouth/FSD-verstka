@@ -1,8 +1,8 @@
 mixin counter-dropdown(placeholder, valueFormat, restrictedValue, classModifier)
-    .counter-dropdown(class=classModifier)
-        .counter-dropdown__field.basic-text(data-placeholder=placeholder, data-restricted-value=restrictedValue, data-value-format=valueFormat)= placeholder
-        span.counter-dropdown__icon.dropdown-icon.dropdown-icon_block
-        .counter-dropdown__list.cta-text
+    .counter-dropdown.dropdown(class=classModifier)
+        .counter-dropdown__field.dropdown__toggler.basic-text(data-dropdown-modifier-class='counter-dropdown_collapsed',data-placeholder=placeholder, data-restricted-value=restrictedValue, data-value-format=valueFormat)= placeholder
+        span.counter-dropdown__icon.dropdown__icon.dropdown__icon_block
+        .counter-dropdown__list.dropdown__content.cta-text
             if block
                 block
             else
