@@ -63,12 +63,65 @@ $(document).ready(function(){
                 
                 let counterValue = parseInt($(counter).val());
                 totalCount[thisDropdownIndex] += counterValue;
-                countersArr[thisDropdownIndex][index] = counterValue;
+                countersArr[thisDropdownIndex][index] = counterValue,
+                dropdown = $(counter).parents('.counter-dropdown'),
+                dropdownIndex = parseInt(dropdown.data('index'));
 
                 if (index < 1){
-                    firstAndSecondCounter[thisDropdownIndex] += counterValue;
+                    firstAndSecondCounter[dropdownIndex] += counterValue;
                 }else if (index == dropdownCounters.length){
-                    lastCounter[thisDropdownIndex] = counterValue;
+                    lastCounter[dropdownIndex] = counterValue;
+                }
+
+                if(dropdownButtonApply.length == 0){
+                    $(counter).change(function(e) {
+                        let lastValue = parseInt($(this).data('last-value')),
+                            value = parseInt($(this).val());
+
+                        totalCount[dropdownIndex] -= lastValue,
+                        totalCount[dropdownIndex] += value,
+                        countersArr[dropdownIndex][index] = value;
+
+                        if (index < 1){
+                            firstAndSecondCounter[dropdownIndex] -= lastValue;
+                            firstAndSecondCounter[dropdownIndex] += value;
+                        }else if (index == dropdownCounters.length){
+                            lastCounter[dropdownIndex] = value;
+                        }
+
+                        if(totalCount[dropdownIndex] > 0){
+                            let textTemplate = fieldValueTemplate({total: totalCount[dropdownIndex], counters: countersArr[dropdownIndex], firstAndSecondCounter: firstAndSecondCounter[dropdownIndex], lastCounter: lastCounter[dropdownIndex]});
+                            if (fieldRestrictedValue != null){
+                                let key = 0;
+                                fieldText = []; 
+                                textSplitted = textTemplate.split(', ');
+                                textSplitted.forEach((splitted) => {
+                                    let counterNum = parseInt(splitted.match(/\d+/));
+                                    if (counterNum != fieldRestrictedValue){
+                                        let regexCheckArray = /\[(.+)\s*\;\s*(.+)\s*\;\s*(.+)\]/g;
+                                        regexCheckArray = regexCheckArray.exec(splitted);
+                                        if(regexCheckArray === null){
+                                            fieldText[key] = splitted; 
+                                        }else{
+                                            fieldText[key] = counterNum + " " + regexCheckArray[3];
+        
+                                            if(counterNum % 10 == 1 && parseInt(counterNum / 10)%10 != 1){
+                                                fieldText[key] = counterNum + " " + regexCheckArray[1];
+                                            }else if(counterNum % 10 >= 2 && counterNum % 10 < 5 && parseInt(counterNum / 10)%10 != 1){
+                                                fieldText[key] = counterNum + " " + regexCheckArray[2];
+                                            }
+                                        }
+                                        key++;
+                                    }
+                                });
+                                fieldText = fieldText.join(', ');
+                            }else{
+                                fieldText = textTemplate;
+                            }
+                        }
+                        field.text(fieldText);
+
+                    })
                 }
 
             });

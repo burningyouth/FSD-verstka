@@ -11,4 +11,14 @@ mixin counter-dropdown(placeholder, valueFormat, restrictedValue, classModifier)
                 button.counter-dropdown__button.counter-dropdown__button_clear.cta-text Очистить
                 button.counter-dropdown__button.counter-dropdown__button_apply.cta-text Применить
 
+mixin counter-dropdown_no-buttons(placeholder, valueFormat, restrictedValue, classModifier)
+    .counter-dropdown.dropdown(class=classModifier)
+        .counter-dropdown__field.dropdown__toggler.basic-text(data-dropdown-modifier-class='counter-dropdown_collapsed',data-placeholder=placeholder, data-restricted-value=restrictedValue, data-value-format=valueFormat)= placeholder
+        span.counter-dropdown__icon.dropdown__icon.dropdown__icon_block
+        .counter-dropdown__list.dropdown__content.cta-text
+            if block
+                block
+            else
+                p Нет контента!
+
 include ./__row/counter-dropdown__row.pug

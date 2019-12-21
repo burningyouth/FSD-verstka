@@ -30,6 +30,8 @@ $(document).ready(function(){
             min = $(input).attr('min') ? parseInt($(input).attr('min')) : -Infinity,
             val = parseInt($(input).val());
         refreshClasses(buttonInitial, max, min, val);
+
+        $(input).data('last-value', val);
     });
 
     counters.change(function(e){
@@ -38,6 +40,8 @@ $(document).ready(function(){
             max = counter.attr('max') ? parseInt(counter.attr('max')) : Infinity,
             min = counter.attr('min') ? parseInt(counter.attr('min')) : -Infinity,
             val = parseInt(counter.val());
+        
+        counter.data('last-value', val);
 
         refreshClasses(buttonMinus, max, min, val);
     });
