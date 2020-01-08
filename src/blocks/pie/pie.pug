@@ -1,10 +1,16 @@
 mixin pie(...values)
-    .pie
+    .pie 
         - var total = 0
         each value in values
             - total = total + value
         svg.pie__chart(data-total=total)
             each value in values
                 circle.pie__value(data-value=value, cx='50%', cy='50%')
-        .pie__counter= total
-            |&nbsp;голосов
+        .pie__counter.widget-title= total
+            br
+            .cta-text голосов
+        ul.pie__legend.bullet-list
+            li.pie__legend-item.bullet-list__item Великолепно 
+            li.pie__legend-item.bullet-list__item Хорошо 
+            li.pie__legend-item.bullet-list__item Удовлетворительно 
+            li.pie__legend-item.bullet-list__item Разочарован

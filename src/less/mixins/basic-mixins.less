@@ -203,6 +203,16 @@
     })
 }
 
+.fs-generator(@iterator: 0, @start: 10, @length: 8, @step: 2) when (@iterator <= @length) {
+    @postfix: @start + @step * @iterator;
+    @size: @postfix * 1px;
+    @next: @iterator + 1;
+    .fs-@{postfix}{
+        font-size: @size !important;
+    }
+    .fs-generator(@next, @start, @length, @step);
+}
+
 .margin-generator(@iterator: 0, @length: 10, @step: 5, @bp: @breakpoints) when (@iterator <= @length) {
     @postfix: @step * @iterator;
     @margin: @postfix * 1px;

@@ -15,12 +15,12 @@ html(lang="en")
         header
             +navbar
                 li.navbar__item
-                    a(href='#').navbar__link.navbar__link_active Home
-                li.navbar__item
+                    a(href='/').navbar__link.navbar__link_active Home
+                li.navbar__item 
                     a(href='#').navbar__link About Us
-                li.navbar__item
-                    a(href="#services").navbar__link.navbar-dropdown__toggler.dropdown-icon#services__toggler Services
-                    ul(data-toggler="#services__toggler").navbar-dropdown__list#services
+                li.navbar__item.dropdown
+                    a(data-content-modifier-class="navbar-dropdown__list_collapsed").navbar__link.navbar-dropdown__toggler.dropdown__toggler.dropdown__icon Services
+                    ul.dropdown__content.navbar-dropdown__list
                         li
                             a(href="#").navbar__link first
                         li
@@ -34,9 +34,10 @@ html(lang="en")
                 li.navbar__item
                     a(href='#').navbar__link Documentation
                 li.navbar__item
-                    +button_link('login', '#', '', 'button_slim button_outline')
+                    +button_link('login', 'login.html', '', 'button_slim button_outline')
                 li.navbar__item
-                    +button_link('register', '#', '', 'button_slim')
+                    +button_link('register', 'registration.html', '', 'button_slim')
+    
 
         main.main
             .container.mt-30.mb-50
@@ -80,7 +81,7 @@ html(lang="en")
                         .mr-10
                         +like-button(1)
                 .mt-30
-                    +rating(4)
+                    +rating(4.6)
                 .mt-30
                     +rating(2)
 

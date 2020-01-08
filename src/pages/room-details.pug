@@ -19,13 +19,13 @@ html(lang="en")
                 img(src="assets/img/image3.jpg", alt="")
             .container.room-details-main__container
                 .room-details-main__info-container
-                    .room-details-main__room-info.mb-30
-                        .item-title.mb-20 Сведения о номере
-                        +text-with-icon('insert_emoticon', 'mb-20')
+                    .room-details-main__room-info
+                        .item-title Сведения о номере
+                        +text-with-icon('insert_emoticon')
                             strong Комфорт
                             br
                             span Шумопоглощающие стены
-                        +text-with-icon('location_city', 'mb-20')
+                        +text-with-icon('location_city')
                             strong Удобство
                             br
                             span Окно в каждой из спален
@@ -33,19 +33,19 @@ html(lang="en")
                             strong Уют
                             br
                             span Номер оснащён камином
-                    .room-details-main__impressions.mb-30
+                    .room-details-main__impressions
                         .item-title.mb-20 Впечатления от номера
-                        +pie(0,10,12,30)
+                        +pie(0,100,22,30)
                     .room-details-main__reviews.mb-30
                         .flex.flex__justify-content_space-between.flex__align-items_center.flex__align-items-md_flex-end.flex__direction_column.flex__direction-md_row.mb-20 
                             .item-title Отзывы посетителей номера
-                            small.caption-text.mt-10.mt-md-0 2 отзыва
+                            small.caption-text.fs-14.mt-10.mt-md-0 2 отзыва
                         +testimonial('assets/img/testimonial.jpg', 12, 'Мурад Сарафанов', '5 дней назад', 'mb-20')
                             |Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
                         +testimonial('assets/img/testimonial.jpg', 2, 'Патрисия Стёклышкова', 'Неделю назад')
                             |Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент
-                    .room-details-main__rules.mb-30
-                        .item-title.mb-20 Правила
+                    .room-details-main__rules.mb-md-0.mb-30
+                        .item-title.mb-20.ml-0.ml-xl-20 Правила
                         +bullet-list('Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
                     .room-details-main__cancel
                         .item-title.mb-20 Отмена

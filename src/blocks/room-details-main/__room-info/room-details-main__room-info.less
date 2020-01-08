@@ -1,3 +1,33 @@
+@import '../../../less/import.less';
+
 .room-details-main__room-info{
     max-width: 280px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: @xl){
+    .room-details-main__room-info{
+        max-width: none;
+        width: 50%;
+        .item-title{
+            text-align: left !important;
+        }
+    }
+}
+
+
+@media (max-width: @md){
+    .room-details-main__room-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        width: 100%;
+
+        margin-bottom: 50px;
+        .item-title{
+            text-align: center !important;
+        }
+    }
 }

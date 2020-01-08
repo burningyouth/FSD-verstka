@@ -1,0 +1,19 @@
+@import '../../../less/import.less';
+
+.pie__legend-item{
+    margin-bottom: 0;
+    padding-left: 15px;
+    
+    &:first-of-type::before{
+        background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    }
+    &:nth-of-type(2)::before{
+        background: @secondary-gradient;
+    }
+    &:nth-of-type(3)::before{
+        background: @primary-gradient;
+    }
+    &:nth-of-type(4)::before{
+        background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    }
+}
