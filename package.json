@@ -46,6 +46,7 @@
     "cssnano": "^4.1.10",
     "file-loader": "^4.3.0",
     "html-webpack-plugin": "^3.2.0",
+    "inputmask": "^5.0.1",
     "jquery": "^3.4.1",
     "jquery-lazy": "^1.7.10",
     "less": "^3.10.3",

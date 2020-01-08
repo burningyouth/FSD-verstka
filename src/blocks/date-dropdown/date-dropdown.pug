@@ -1,6 +1,10 @@
-mixin date-dropdown(placeholder, id, classModifier)
+mixin date-dropdown(placeholder, id, position, classModifier)
     .date-dropdown.dropdown(class=classModifier)
-        input(type="text", name=id, placeholder=placeholder, id=id, readonly).date-dropdown__input.basic-text
+        input(type="text", name=id, placeholder=placeholder, id=id, data-position=position, readonly).date-dropdown__input.basic-text
         .date-dropdown__icon.dropdown__icon.dropdown__icon_block
 
 include ./_filter/date-dropdown_filter.pug
+
+include ./_filter-double/date-dropdown_filter-double.pug
+
+include ./_no-datepicker/date-dropdown_no-datepicker.pug

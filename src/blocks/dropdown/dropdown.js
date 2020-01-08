@@ -45,7 +45,7 @@ $(document).ready(function(){
             e.preventDefault();
             if (content) {
                 $(dropdown).toggleClass('dropdown_collapsed');
-                if ($(dropdown).hasClass('dropdown_collapsed')){
+                if ($(dropdown).hasClass('dropdown_collapsed') && (!content.is(':visible'))){
                     content.slideDown(200);
                     if (togglerModClass) {
                         $(this).addClass(togglerModClass);

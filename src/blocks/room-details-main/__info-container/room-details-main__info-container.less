@@ -1,0 +1,21 @@
+@import '../../../less/import.less';
+
+.room-details-main__info-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 703px;
+    margin-right: 70px;
+}
+
+@media (max-width: @xl){
+    .room-details-main__info-container{
+        justify-content: center;
+        margin-right: 0;
+        .item-title, .caption-text{
+            text-align: center;
+        }
+    }
+}

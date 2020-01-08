@@ -1,0 +1,19 @@
+@import '../../../less/import.less';
+
+.room-details-main__container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+@media (max-width: @xl){
+    .room-details-main__container{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}

@@ -1,0 +1,7 @@
+mixin date-dropdown_no-datepicker(placeholder, id, doubleFilter, dateIndex)
+    if doubleFilter && dateIndex
+        .date-dropdown.dropdown.date-dropdown_no-datepicker
+            input(type="text", name=id, placeholder=placeholder, id=id, data-filter-double=doubleFilter, data-date-index=(dateIndex-1), readonly).date-dropdown__input.basic-text
+            .date-dropdown__icon.dropdown__icon.dropdown__icon_block
+    else
+        +date-dropdown(placeholder, id, '','date-dropdown_no-datepicker')

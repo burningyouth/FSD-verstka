@@ -1,0 +1,41 @@
+@import '../../../less/import.less';
+
+.room-details-main__gallery{
+    display: grid;
+    grid-template-columns: 68.125% auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    'first second'
+    'first third';
+    background: #00000010;
+    overflow: hidden;
+    max-height: 480px;
+    img{
+        &:first-of-type{
+            width: 100%;
+            height: auto;
+            grid-area: first;
+        }
+        &:nth-of-type(2){
+            width: 100%;
+            height: auto;
+            grid-area: second;
+        }
+        &:nth-of-type(3){
+            width: 100%;
+            height: auto;
+            grid-area: third;
+        }
+    }
+}
+
+@media (max-width: @lg){
+    .room-details-main__gallery{
+        max-height: none;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        'first first'
+        'second third';
+    }
+}

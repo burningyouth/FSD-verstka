@@ -14,7 +14,7 @@ $(document).ready(function(){
         if(expanderTarget){
             expander.on('click touch', function (e) {
                 expanderCollapsed = expander.data('collapsed') === 'true' ? true : false;
-                if (!expanderCollapsed) {
+                if (!expanderCollapsed && (!expanderTarget.is(':visible'))) {
                     expander.data('collapsed', 'true');
                     expanderTarget.slideDown(200);
                     expander.addClass(expanderClassMod);

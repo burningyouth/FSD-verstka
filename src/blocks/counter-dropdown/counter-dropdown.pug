@@ -8,8 +8,8 @@ mixin counter-dropdown(placeholder, valueFormat, restrictedValue, classModifier)
             else
                 p Нет контента!
             .counter-dropdown__buttons
-                button.counter-dropdown__button.counter-dropdown__button_clear.cta-text Очистить
-                button.counter-dropdown__button.counter-dropdown__button_apply.cta-text Применить
+                button.counter-dropdown__button.counter-dropdown__button_clear.cta-text.simple-button.simple-button_secondary Очистить
+                button.counter-dropdown__button.counter-dropdown__button_apply.cta-text.simple-button Применить
 
 mixin counter-dropdown_no-buttons(placeholder, valueFormat, restrictedValue, classModifier)
     .counter-dropdown.dropdown(class=classModifier)

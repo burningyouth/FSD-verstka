@@ -1,5 +1,5 @@
-mixin text-with-icon(icon)
-    .text-with-icon
+mixin text-with-icon(icon, classModifier)
+    .text-with-icon(class=classModifier)
         if icon
             .text-with-icon__icon= icon
         else

@@ -3,7 +3,7 @@ $(document).ready(function(){
         aside = main.find('.search-room-main__aside'),
         asideElement,
         asideNavbarContainer = $('.navbar .navbar__search');
-    if (aside && asideNavbarContainer){
+    if (aside.length>0 && asideNavbarContainer.length>0){
         let screenWidth = $(window).width();
         if(screenWidth <= 992){
             asideElement = aside.detach();
