@@ -28,5 +28,5 @@ ehthumbs.db
 Icon?
 
 #Pages
-src
-build
+src/*
+build/*
