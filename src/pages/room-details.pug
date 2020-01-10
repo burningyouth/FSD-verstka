@@ -34,7 +34,7 @@ html(lang="en")
                             br
                             span Номер оснащён камином
                     .room-details-main__impressions
-                        .item-title.mb-20 Впечатления от номера
+                        .item-title Впечатления от номера
                         +pie(0,100,22,30)
                     .room-details-main__reviews.mb-30
                         .flex.flex__justify-content_space-between.flex__align-items_center.flex__align-items-md_flex-end.flex__direction_column.flex__direction-md_row.mb-20 
@@ -53,16 +53,10 @@ html(lang="en")
                 .room-details-main__calculator.mb-50
                     +form-card('', 'POST')
                         .form-card__title
-                            +room-number('888', 'люкс')
+                            +room-number('888', 'люкс', 'room-number_big')
                             +faded-text('9 990₽', 'в сутки')
                         .mb-20
-                            +date-dropdown_filter-double('ДД.ММ.ГГГГ', 'filter-double', 'bottom center')
-                                .w-100.w-50-xs.pr-xs-10.pr-0.mb-20.mb-xs-0.d-inline-block
-                                    +form-group('прибытие')
-                                        +date-dropdown_no-datepicker('ДД.ММ.ГГГГ', 'arival', '#filter-double', 1)
-                                .w-100.w-50-xs.pl-xs-10.pl-0.d-inline-block
-                                    +form-group('выезд')
-                                        +date-dropdown_no-datepicker('ДД.ММ.ГГГГ', 'departure', '#filter-double', 2)
+                            +date-dropdown_double('ДД.ММ.ГГГГ', 'filter-double', 'bottom center')
                         +form-group('гости', 'mb-20 with-counter-dropdown')
                             +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
                                 +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')

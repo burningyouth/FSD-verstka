@@ -1,0 +1,11 @@
+mixin date-dropdown_double(placeholder, id, position, classModifier)
+    .date-dropdown.date-dropdown_double.dropdown(id=id, class=classModifier, data-position=position)
+        +form-group('прибытие', 'mr-0 mr-xs-10')
+            .date-dropdown__input-container
+                input(type="text", name='arival', placeholder=placeholder, readonly).date-dropdown__input.basic-text
+                .date-dropdown__icon.dropdown__icon.dropdown__icon_block
+        +form-group('выезд', 'ml-0 ml-xs-10 mt-20 mt-xs-0')
+            .date-dropdown__input-container
+                input(type="text", name='departure', placeholder=placeholder, readonly).date-dropdown__input.basic-text
+                .date-dropdown__icon.dropdown__icon.dropdown__icon_block
+        input(type="text", name='hidden').date-dropdown__hidden

@@ -89,7 +89,10 @@ $(document).ready(function(){
                 
                 e.preventDefault();
                 $(dropdown).removeClass('dropdown_collapsed');
-                content.slideUp('fast');
+                content.slideUp('fast', function(){
+                    content.height(0);
+                });
+                
 
                 if (togglerModClass) {
                     $(toggler).removeClass(togglerModClass);

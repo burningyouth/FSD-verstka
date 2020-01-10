@@ -8,7 +8,7 @@ $(document).ready(function(){
             degPerValue = 0,
             degsUsed = 0,
             pieValues = $(chart).find('.pie__value'),
-            circleLength = 2*parseInt(59)*Math.PI;
+            circleLength = 2*parseInt(58)*Math.PI;
         if (totalValue > 0){
             let word = words[2];
 

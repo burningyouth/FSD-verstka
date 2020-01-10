@@ -16,7 +16,7 @@ html(lang="en")
             .container.search-room-main
                 aside.search-room-main__aside
                     +form-group('даты пребывания в отеле', 'mb-20')
-                        +date-dropdown_filter('Выберите даты', 'guest-dates')
+                        +date-dropdown('Выберите даты', 'guest-dates')
                     +form-group('гости', 'with-counter-dropdown mb-30')
                         +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
                             +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')

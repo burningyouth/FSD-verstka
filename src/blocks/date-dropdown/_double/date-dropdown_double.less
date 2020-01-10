@@ -1,0 +1,16 @@
+@import '../../../less/import.less';
+
+.date-dropdown.date-dropdown_double{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: @xs){
+    .date-dropdown.date-dropdown_double{
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+    }
+}

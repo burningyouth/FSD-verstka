@@ -16,15 +16,15 @@ mixin form-card(action, method)
 mixin form-card__registration(action, method)
     form(action=action, method=method).form-card
         +form-card__title('Регистрация аккаунта')
-        +form-group('', 'mb-20')
+        +form-group('', 'mb-15')
             +text-field('Имя', 'name', 'mb-10')
             +text-field('Фамилия', 'lastname', 'mb-10')
-            div
-                +radio-button('Мужчина', 'men', 'sex', 'checked', 'mr-20')
-                +radio-button('Женщина', 'woman', 'sex')
+            
+            +radio-button('Мужчина', 'men', 'sex', 'checked', 'mr-20')
+            +radio-button('Женщина', 'woman', 'sex')
         +form-group('Дата рождения', 'mb-20')
             +date-mask('birthday')
-        +form-group('Данные для входа на сервис', 'mb-20')
+        +form-group('Данные для входа на сервис', 'mb-15')
             +text-field('Email', 'email', 'mb-10')
             +text-field('Пароль', 'password', 'mb-10')
             +toggle('Получать спецпредложения', 'special-offers')
@@ -44,13 +44,7 @@ mixin form-card__search-room(action, method)
     form(action=action, method=method).form-card
         +form-card__title('Найдём номера под ваши пожелания')
         .mb-20
-            +date-dropdown_filter-double('ДД.ММ.ГГГГ', 'filter-double', 'bottom center')
-                .w-100.w-50-xs.pr-xs-10.pr-0.mb-20.mb-xs-0.d-inline-block
-                    +form-group('прибытие')
-                        +date-dropdown_no-datepicker('ДД.ММ.ГГГГ', 'arival', '#filter-double', 1)
-                .w-100.w-50-xs.pl-xs-10.pl-0.d-inline-block
-                    +form-group('выезд')
-                        +date-dropdown_no-datepicker('ДД.ММ.ГГГГ', 'departure', '#filter-double', 2)
+            +date-dropdown_double('ДД.ММ.ГГГГ', 'filter-double', 'bottom center')
         .mb-30
             +form-group('гости', 'with-counter-dropdown')
                 +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
