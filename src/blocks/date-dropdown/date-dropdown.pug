@@ -5,4 +5,8 @@ mixin date-dropdown(placeholder, id, position, classModifier)
             .date-dropdown__icon.dropdown__icon.dropdown__icon_block
         input(type="text", name='hidden').date-dropdown__hidden
 
+mixin date-dropdown_inline(classModifier)
+    .date-dropdown.dropdown(class=classModifier)
+        .date-dropdown__inline-datepicker
+
 include ./_double/date-dropdown_double.pug

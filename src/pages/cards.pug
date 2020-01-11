@@ -1,0 +1,43 @@
+include ../pug/mixins.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href='./assets/css/kit.css')
+        title Cards
+    body.basic-text.ui-kit-body
+        .ml-25.mt-30
+            +logo_secondary
+        .flex.flex__justify-content_space-between.container(style='margin-top: 70px')
+            div
+                +form-card__search-room('#', 'POST', 'mb-40')
+                +form-card__registration('#', 'POST')
+            div
+                +form-card('', 'POST', 'mb-40')
+                    .form-card__title
+                        +room-number('888', 'люкс', 'room-number_big')
+                        +faded-text('9 990₽', 'в сутки')
+                    .mb-20
+                        +date-dropdown_double('ДД.ММ.ГГГГ', 'filter-double', 'bottom center')
+                    +form-group('гости', 'mb-20 with-counter-dropdown')
+                        +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
+                            +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
+                            +counter-dropdown__row('дети',  'guests-children', '0', '12', '0')
+                            +counter-dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
+                    +form-card__checkout-item('9 990₽ х 4 суток', '39 960₽')
+                    +form-card__checkout-item('Сбор за услуги: скидка 2 179₽', '0₽', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.')
+                    +form-card__checkout-item('Сбор за дополнительные услуги', '300₽', 'Контент тултипа!')
+                    +form-card__checkout-total('Итого', '38 081₽')
+                    +button_block('забронировать', 'submit', 'arrow_forward')
+                +form-card__login('#', 'POST')
+            div
+                +date-dropdown_inline('mb-40')
+                +room-card('888', 'люкс', '9 990', '5', '143', '#', 'mb-40')
+                    .room-card__slide(style="background-image:url(assets/img/room1.jpg)")
+                    .room-card__slide(style="background-image:url(assets/img/room2.jpg)")
+                +room-card('888', 'люкс', '9 990', '5', '143', '#')
+                    .room-card__slide(style="background-image:url(assets/img/room1.jpg)")
+                    .room-card__slide(style="background-image:url(assets/img/room2.jpg)")
+        script(src='./assets/js/kit.js')

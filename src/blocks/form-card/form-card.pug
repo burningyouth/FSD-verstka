@@ -6,17 +6,17 @@ include ./__checkout-item/form-card__checkout-item.pug
 
 include ./__checkout-total/form-card__checkout-total.pug
 
-mixin form-card(action, method)
-    form(action=action, method=method).form-card
+mixin form-card(action, method, classModifier)
+    form(action=action, method=method, class=classModifier).form-card
         if block
             block
         else
             p Нет контента!
 
-mixin form-card__registration(action, method)
-    form(action=action, method=method).form-card
+mixin form-card__registration(action, method, classModifier)
+    form(action=action, method=method, class=classModifier).form-card
         +form-card__title('Регистрация аккаунта')
-        +form-group('', 'mb-15')
+        +form-group('', 'mb-20')
             +text-field('Имя', 'name', 'mb-10')
             +text-field('Фамилия', 'lastname', 'mb-10')
             
@@ -24,15 +24,15 @@ mixin form-card__registration(action, method)
             +radio-button('Женщина', 'woman', 'sex')
         +form-group('Дата рождения', 'mb-20')
             +date-mask('birthday')
-        +form-group('Данные для входа на сервис', 'mb-15')
+        +form-group('Данные для входа на сервис', 'mb-20')
             +text-field('Email', 'email', 'mb-10')
             +text-field('Пароль', 'password', 'mb-10')
             +toggle('Получать спецпредложения', 'special-offers')
         +button_block('перейти к оплате', 'submit', 'arrow_forward')
         +form-card__footer('Уже есть аккаунт на Toxin', 'войти', 'login.html')
 
-mixin form-card__login(action, method)
-    form(action=action, method=method).form-card
+mixin form-card__login(action, method, classModifier)
+    form(action=action, method=method, class=classModifier).form-card
         +form-card__title('Войти')
         +form-group('', 'mb-20')
             +text-field('Email', 'email', 'mb-10')
@@ -40,8 +40,8 @@ mixin form-card__login(action, method)
         +button_block('войти', 'submit', 'arrow_forward')
         +form-card__footer('Нет аккаунта на Toxin?', 'создать', 'registration.html')
 
-mixin form-card__search-room(action, method)
-    form(action=action, method=method).form-card
+mixin form-card__search-room(action, method, classModifier)
+    form(action=action, method=method, class=classModifier).form-card
         +form-card__title('Найдём номера под ваши пожелания')
         .mb-20
             +date-dropdown_double('ДД.ММ.ГГГГ', 'filter-double', 'bottom center')
