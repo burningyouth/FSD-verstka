@@ -26,7 +26,3 @@ Desktop.ini
 .DS_Store*
 ehthumbs.db
 Icon?
-
-#Pages
-src/*
-build/*

@@ -1,15 +1,16 @@
 @import '../../../less/import.less';
 
 .prefooter__content{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 26% 17.2% 17.2% 17.2% auto;
+    grid-template-rows: 100%;
     color: @dark-shade75;
     line-height: 24px;
 }
 
 @media(max-width: @lg){
     .prefooter__content{
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
