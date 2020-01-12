@@ -119,7 +119,7 @@
 .navbar__icon.navbar__icon_active{color:#bc9cff}
 .navbar__icon{display:block;font-size:30px!important;margin-right:12px;text-decoration:none;color:inherit;border:none;outline:none;background:none;-webkit-transition-property:color;-o-transition-property:color;transition-property:color;-webkit-transition-duration:.2s;-o-transition-duration:.2s;transition-duration:.2s;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease}
 .navbar__item.navbar__item_small-margin:not(:first-of-type){margin-left:20px}
-.navbar__item{position:relative;font-family:inherit;font-size:inherit;color:rgba(31,32,65,.5)}.navbar__item:not(:first-of-type){margin-left:28px}@media (max-width:992px){.navbar__item{display:block;margin-left:0;text-align:center}.navbar__item:not(:last-of-type){margin-bottom:20px}}
+.navbar__item{position:relative;font-family:inherit;font-size:inherit;color:rgba(31,32,65,.5)}.navbar__item:not(:first-of-type){margin-left:28px}@media (max-width:992px){.navbar__item{display:block;margin-left:0!important;text-align:center}.navbar__item:not(:last-of-type){margin-bottom:20px}}
 @media (max-width:992px){.navbar__items.navbar__items_collapsed{margin-top:20px;max-height:100vh;overflow-y:auto!important}}
 .navbar__items{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:0;list-style:none}@media (max-width:992px){.navbar__items{display:none;width:100%;margin-top:15px;max-height:100vh;overflow-y:auto}}
 .navbar__link.navbar__link_active{font-weight:700;color:rgba(31,32,65,.75)}
