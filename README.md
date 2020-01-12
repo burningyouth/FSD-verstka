@@ -4,6 +4,7 @@
 # Ссылки на UI-KIT
 - [Cards](https://sadscriptoman.github.io/FSD-verstka/dist/cards.html)
 - [Headers & footers](https://sadscriptoman.github.io/FSD-verstka/dist/headers-footers.html)
+- [Form Elements](https://sadscriptoman.github.io/FSD-verstka/dist/form-elements.html)
 
 # Ссылки на страницы
 - [Landing page](https://sadscriptoman.github.io/FSD-verstka/dist/landing-page.html)

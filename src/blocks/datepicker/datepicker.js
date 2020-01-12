@@ -62,9 +62,15 @@ $(document).ready(function(){
         applyButton.on('click touch', function(e){
             e.preventDefault();
 
-            triggerInputs.each((i, el) => {
-                $(el).val(dates[i].toLocaleDateString());
-            });
+            if (dates.length > 1){
+                if (triggerInputs.length > 1){
+                    triggerInputs.each((i, el) => {
+                        $(el).val(dates[i].toLocaleDateString());
+                    });
+                }else{
+                    triggerInputs.val(inputHidden.val());
+                }
+            }
             
             datepicker.hide();
             $(dateDropdown).data('datepicker-hidden', 'true');

@@ -67,7 +67,7 @@ $(document).ready(function(){
                 dropdown = $(counter).parents('.counter-dropdown'),
                 dropdownIndex = parseInt(dropdown.data('index'));
 
-                if (index < 1){
+                if (index <= 1){
                     firstAndSecondCounter[dropdownIndex] += counterValue;
                 }else if (index == dropdownCounters.length){
                     lastCounter[dropdownIndex] = counterValue;
@@ -82,7 +82,7 @@ $(document).ready(function(){
                         totalCount[dropdownIndex] += value,
                         countersArr[dropdownIndex][index] = value;
 
-                        if (index < 1){
+                        if (index <= 1){
                             firstAndSecondCounter[dropdownIndex] -= lastValue;
                             firstAndSecondCounter[dropdownIndex] += value;
                         }else if (index == dropdownCounters.length){

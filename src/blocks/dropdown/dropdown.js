@@ -28,6 +28,21 @@ $(document).ready(function(){
             dropdownId = '#' + dropdownId;
         }
 
+        togglers.each((i, el) =>{
+            let dropdownModClass = $(el).data("dropdown-modifier-class") ? $(el).data("dropdown-modifier-class"): 'dropdown_collapsed',
+                target = $(el).data("target") ? $(el).data("target") : null,
+                content;
+            if (target){
+                content = $(dropdown).find('.dropdown__content'+target);
+            }else{
+                content = $(dropdown).find('.dropdown__content');
+            }
+
+            if ($(dropdown).hasClass(dropdownModClass)){
+                content.show();
+            }
+        })
+
         togglers.on('click touch', function (e) {
             let toggler = $(this),
                 togglerModClass = toggler.data("self-modifier-class") ? toggler.data("self-modifier-class"): null,
