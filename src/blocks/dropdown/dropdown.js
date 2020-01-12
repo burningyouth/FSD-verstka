@@ -104,9 +104,7 @@ $(document).ready(function(){
                 
                 e.preventDefault();
                 $(dropdown).removeClass('dropdown_collapsed');
-                content.slideUp('fast', function(){
-                    content.height(0);
-                });
+                content.slideUp('fast');
                 
 
                 if (togglerModClass) {
