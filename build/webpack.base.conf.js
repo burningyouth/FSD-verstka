@@ -4,29 +4,22 @@ const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-//const { VueLoaderPlugin } = require('vue-loader')
 
-// Main const
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
   assets: 'assets/'
 }
 
-// Pages const for HtmlWebpackPlugin
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
-// const PAGES_DIR = PATHS.src
 const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
-const PAGES_ENTRY = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.js'))
 
 module.exports = {
   externals: {
     paths: PATHS
   },
   entry: {
-    kit: `${PATHS.src}/pages/ui-kit.js`
+    kit: `${PATHS.src}/entry/kit.js`
   },
   output: {
     filename: `${PATHS.assets}js/[name].js`,
@@ -115,12 +108,8 @@ module.exports = {
       ]
     }]
   },
-  resolve: {
-    alias: {
-      '~': PATHS.src+"/pages",
-    }
-  },
   plugins: [
+
     new webpack.ProvidePlugin({
       $: 'jquery',
       '$': 'jquery',
@@ -129,18 +118,17 @@ module.exports = {
       'window.jquery': 'jquery',
       'window.jQuery': 'jquery',
     }),
+
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].css`,
     }),
+
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: 'static' },
     ]),
 
-    // Automatic creation any html pages (Don't forget to RERUN dev server)
-    // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
-    // best way to create pages: https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       inject: false,
