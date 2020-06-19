@@ -20,14 +20,14 @@
 В макете есть блоки цветовой палитры, в своем проекте я решил не делать лишнюю работу и не добавил этот блок. На этой странцие просто вынес основные виды текста.
 
 # Ссылки на UI-KIT
-- [Colors & type](https://sadscriptoman.github.io/FSD-verstka/dist/colors-type.html)
-- [Form Elements](https://sadscriptoman.github.io/FSD-verstka/dist/form-elements.html)
-- [Cards](https://sadscriptoman.github.io/FSD-verstka/dist/cards.html)
-- [Headers & footers](https://sadscriptoman.github.io/FSD-verstka/dist/headers-footers.html)
+- [Colors & type](https://burningyouth.github.io/FSD-verstka/dist/colors-type.html)
+- [Form Elements](https://burningyouth.github.io/FSD-verstka/dist/form-elements.html)
+- [Cards](https://burningyouth.github.io/FSD-verstka/dist/cards.html)
+- [Headers & footers](https://burningyouth.github.io/FSD-verstka/dist/headers-footers.html)
 
 # Ссылки на страницы
-- [Landing page](https://sadscriptoman.github.io/FSD-verstka/dist/landing-page.html)
-- [Sign in](https://sadscriptoman.github.io/FSD-verstka/dist/login.html)
-- [Registration](https://sadscriptoman.github.io/FSD-verstka/dist/registration.html)
-- [Search room](https://sadscriptoman.github.io/FSD-verstka/dist/search-room.html)
-- [Room details](https://sadscriptoman.github.io/FSD-verstka/dist/room-details.html)
+- [Landing page](https://burningyouth.github.io/FSD-verstka/dist/landing-page.html)
+- [Sign in](https://burningyouth.github.io/FSD-verstka/dist/login.html)
+- [Registration](https://burningyouth.github.io/FSD-verstka/dist/registration.html)
+- [Search room](https://burningyouth.github.io/FSD-verstka/dist/search-room.html)
+- [Room details](https://burningyouth.github.io/FSD-verstka/dist/room-details.html)
