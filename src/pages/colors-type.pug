@@ -1,0 +1,22 @@
+include ../pug/mixins.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href='./assets/css/kit.css')
+        title Colors &#38; type
+    body
+        .ml-25.mt-30
+            +logo_secondary
+        div(style='margin-top: 70px').container
+            h1.mb-50.widget-title This one is the sub-section or widget title
+
+            h2.mb-50.item-title Next one is the item title inside widgets
+
+            h3.mb-50.cta-text This is a label or CTA text
+
+            p.mb-50.basic-text This is the body text which is used for most of the design, like paragraphs, lists, etc.
+
+            .caption-text.basic-text This is caption text

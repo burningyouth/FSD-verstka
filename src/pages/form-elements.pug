@@ -1,0 +1,173 @@
+include ../pug/mixins.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href='./assets/css/kit.css')
+        title Form elements
+    body.basic-text
+        .ml-25.mt-30
+            +logo_secondary
+        .d-flex.flex__justify-content_space-between.container(style='margin-top: 70px; margin-bottom: 100px;')
+            div(style='width: 320px')
+                .form-group.mb-20
+                    h3.form-group__title.cta-text.d-flex.flex__justify-content_space-between Text Field
+                        span(style='font-weight: normal; color: rgba(31, 32, 65, 0.5);') Default
+                    +text-field('Email', 'text1')
+                .form-group.mb-20
+                    h3.form-group__title.cta-text.d-flex.flex__justify-content_space-between Text Field
+                        span(style='font-weight: normal; color: rgba(31, 32, 65, 0.5);') Hover/Focus
+                    +text-field('This is pretty awesome', 'text2', 'text-field_focus')
+                .form-group.with-counter-dropdown.mb-25
+                    h3.form-group__title.cta-text.d-flex.flex__justify-content_space-between Dropdown
+                        span(style='font-weight: normal; color: rgba(31, 32, 65, 0.5);') Default
+                    +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0')
+                        +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
+                        +counter-dropdown__row('дети',  'guests-children', '0', '12', '0')
+                        +counter-dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
+                .form-group.mb-40
+                    h3.form-group__title.cta-text.d-flex.flex__justify-content_space-between masked text field
+                        span(style='font-weight: normal; color: rgba(31, 32, 65, 0.5);') Default
+                    +date-mask('birthday')
+                .date-dropdown.date-dropdown_double.dropdown.mb-40
+                    +form-group('date Dropdown', 'mr-0 mr-xs-10')
+                        .date-dropdown__input-container
+                            input(type="text", name='arival', placeholder='ДД.ММ.ГГГГ', readonly).date-dropdown__input.basic-text
+                            .date-dropdown__icon.dropdown__icon.dropdown__icon_block
+                    +form-group('date Dropdown', 'ml-0 ml-xs-10 mt-20 mt-xs-0')
+                        .date-dropdown__input-container
+                            input(type="text", name='departure', placeholder='ДД.ММ.ГГГГ', readonly).date-dropdown__input.basic-text
+                            .date-dropdown__icon.dropdown__icon.dropdown__icon_block
+                    input(type="text", name='hidden').date-dropdown__hidden
+                div(style='width: 266px;')
+                    +form-group('filter date dropdown', 'mb-40')
+                        .date-dropdown.dropdown
+                            .date-dropdown__input-container
+                                input(type="text", name=id, placeholder='19 авг - 23 авг', readonly).date-dropdown__input.basic-text
+                                .date-dropdown__icon.dropdown__icon.dropdown__icon_block
+                            input(type="text", name='hidden').date-dropdown__hidden
+                    +form-group('subscription text field')
+                        +text-field_subscription('Email', 'text3')
+            div(style='width: 266px')
+                +form-group('Checkbox Buttons', 'mb-40')
+                    +checkbox('Можно курить', 'can-smoke', '', 'mt-10 mb-10')
+                    br
+                    +checkbox('Можно с питомцами', 'with-pets', 'checked', 'mb-10')
+                    br
+                    .checkbox
+                        input(type="checkbox", name='with-guests', id='with-guests', checked).checkbox__input
+                        label(for='with-guests').checkbox__label-box
+                            span.checkbox__label 
+                                |Можно пригласить гостей 
+                                br
+                                |(до 10 человек)
+                +form-group('Radio Buttons', 'mb-40')
+                    +radio-button('Мужчина', 'men', 'sex', 'checked', 'mt-10 mr-20')
+                    +radio-button('Женщина', 'woman', 'sex')
+                +form-group('Toggle', 'mb-40')
+                    +toggle('Получать спецпредложения', 'special-offers', 'checked', 'mt-10 mb-15')
+                    +toggle('Получать спецпредложения', 'special-offers')
+                +form-group('Like button', 'mb-40')
+                    +like-button(12, 'liked', 'mt-10 mr-10')
+                    +like-button(1)
+                +form-group('rate button')
+                    +rating(4, 'mt-10 mr-20')
+                    +rating(5)
+            div(style='width: 320px')
+                +form-group('Range Slider', 'mb-40')
+                    .range-slider(style='width: 266px;')
+                        .range-slider__value.basic-text
+                        .range-slider__input(data-min='1000', data-max='14000', data-start-from='5000', data-start-to='10000', id='range1', name='range1')
+                +form-group('buttons', 'mb-40')
+                    .mt-20.mb-30 
+                        +button('Click me', '', '', 'mr-20')
+                        +button('Click me', '', '', 'button_faded')
+                    .mb-30 
+                        +button('Click me', '', '', 'button_outline mr-20')
+                        +button('Click me', '', '', 'button_outline-faded')
+                    .mb-30 
+                        button.cta-text.simple-button.mr-20 Click me
+                        button.cta-text.simple-button.simple-button_secondary Click me
+                    +button_block('Выбрать номер', 'button', 'arrow_forward')
+                +form-group('pagination')
+                    .pagination.basic-text.mt-10.flex__justify-content_flex-start
+                        a(href="#").pagination__link.pagination__link_active 1
+                        a(href="#").pagination__link 2
+                        a(href="#").pagination__link 3
+                        a(href="#").pagination__link ...
+                        a(href="#").pagination__link 15
+                        a(href="#").pagination__arrow.pagination__arrow_next
+                        span.pagination__label 1 – 12 из 100+ вариантов аренды
+        .d-flex.flex__justify-content_flex-start.container
+            div(style='width: 266px; margin-right: 181px')
+                .form-group.with-counter-dropdown.mb-20
+                    h3.form-group__title.cta-text.d-flex.flex__justify-content_space-between Dropdown
+                        span(style='font-weight: normal; color: rgba(31, 32, 65, 0.5);') Default
+                    +counter-dropdown_no-buttons('Выберите удобства', '${counters[0]} [спальня;спальни;спальней], ${counters[1]} [кровать;кровати;кроватей], ${counters[2]} [ванная комната;ванные комнаты;ванных комнат]', '0')
+                        +counter-dropdown__row('спальни', 'bedrooms', '0', '12', '2')
+                        +counter-dropdown__row('кровати',  'beds', '0', '12', '2')
+                        +counter-dropdown__row('ванные комнаты', 'bathrooms', '0', '12', '0')
+                .form-group
+                    h3.form-group__title.cta-text.d-flex.flex__justify-content_space-between Dropdown
+                        span(style='font-weight: normal; color: rgba(31, 32, 65, 0.5);') Expanded
+                    +counter-dropdown_no-buttons('Выберите удобства', '${counters[0]} [спальня;спальни;спальней], ${counters[1]} [кровать;кровати;кроватей], ${counters[2]} [ванная комната;ванные комнаты;ванных комнат]', '0', 'counter-dropdown_collapsed counter-dropdown_inline')
+                        +counter-dropdown__row('спальни', 'bedrooms', '0', '12', '2')
+                        +counter-dropdown__row('кровати',  'beds', '0', '12', '2')
+                        +counter-dropdown__row('ванные комнаты', 'bathrooms', '0', '12', '0')
+            div(style='width: 320px; margin-right: 72px')
+                +form-group('dropdown')
+                    +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0', 'counter-dropdown_collapsed counter-dropdown_inline')
+                        +counter-dropdown__row('взрослые', 'guests-grownup', '0', '12', '0')
+                        +counter-dropdown__row('дети',  'guests-children', '0', '12', '0')
+                        +counter-dropdown__row('младенцы', 'guest-baby', '0', '12', '0')
+            div(style='width: 320px')
+                +form-group('dropdown')
+                    +counter-dropdown('Сколько гостей', '${firstAndSecondCounter} [гость;гостя;гостей], ${lastCounter} [младенец;младенца;младенцев]', '0', 'counter-dropdown_collapsed counter-dropdown_inline')
+                        +counter-dropdown__row('взрослые', 'guests-grownup2', '0', '12', '2')
+                        +counter-dropdown__row('дети',  'guests-children2', '0', '12', '1')
+                        +counter-dropdown__row('младенцы', 'guest-baby2', '0', '12', '0')
+        .d-flex.flex__justify-content_flex-start.container.mt-40
+            div(style='width: 266px; margin-right: 181px')
+                +checkbox-list('expandable checkbox list', 'mb-20')
+                    +checkbox('Завтрак', 'breakfast')
+                    +checkbox('Письменный стол', 'desk', 'checked')
+                    +checkbox('Стул для кормления', 'feeding-chair', 'checked')
+                    +checkbox('Кроватка', 'cot', 'checked')
+                    +checkbox('Телевизор', 'tv')
+                    +checkbox('Шампунь', 'shampoo')
+                +checkbox-list('expandable checkbox list', 'dropdown_collapsed')
+                    +checkbox('Завтрак', 'breakfast')
+                    +checkbox('Письменный стол', 'desk', 'checked')
+                    +checkbox('Стул для кормления', 'feeding-chair', 'checked')
+                    +checkbox('Кроватка', 'cot', 'checked')
+                    +checkbox('Телевизор', 'tv')
+                    +checkbox('Шампунь', 'shampoo')
+            div(style='width: 266px; margin-right: 126px')
+                +form-group('rich Checkbox Buttons', 'mt-15')
+                    +checkbox('Широкий коридор', 'wide-corridor', '', 'mt-10 mb-10')
+                        |Ширина коридоров в номере не менее 91 см.
+                    br
+                    +checkbox('Помощник для инвалидов', 'assistant')
+                        |На 1 этаже вас встретит специалист  и проводит до номера.
+            div(style='width: 266px')
+                +form-group('bullet list', 'mt-15')
+                    +bullet-list('mt-10','Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
+
+        .d-flex.flex__justify-content_space-between.container.mt-20(style='margin-bottom: 150px')
+            div(style='width: 266px')
+                +text-with-icon('insert_emoticon')
+                    strong Комфорт
+                    br
+                    span Шумопоглощающие стены
+                +text-with-icon('location_city')
+                    strong Удобство
+                    br
+                    span Окно в каждой из спален
+            div(style='width: 710px')
+                +testimonial('assets/img/testimonial.jpg', 12, 'Мурад Сарафанов', '5 дней назад', 'mb-20')
+                    |Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+
+
+        script(src='./assets/js/kit.js')

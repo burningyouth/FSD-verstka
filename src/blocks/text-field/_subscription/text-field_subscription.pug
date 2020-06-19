@@ -1,5 +1,3 @@
-mixin text-field_subscription(placeholder, id, icon, classModifier)
-    .text-field(class=classModifier)
-        input(type="text", placeholder=placeholder, id=id, name=id).text-field__input.basic-text
-        if icon
-            span.text-field__icon= icon
+mixin text-field_subscription(placeholder, id, classModifier)
+    +text-field(placeholder, id, classModifier)
+        span.text-field__icon arrow_forward

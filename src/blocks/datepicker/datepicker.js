@@ -8,13 +8,14 @@ $(document).ready(function(){
             datepicker,
             dates,
             inputHidden = $(dateDropdown).find('.date-dropdown__hidden'),
+            inlineDatepicker = $(dateDropdown).find('.date-dropdown__inline-datepicker'),
             triggerInputs = $(dateDropdown).find('.date-dropdown__input'),
-            options =  {
+            options = {
+                position: position,
                 range: true,
                 dateFormat: 'd M',
                 multipleDatesSeparator: ' - ',
                 offset: 5,
-                position: position,
                 navTitles: {
                     days: '<h2 class="datepicker__title item-title">MM yyyy</h2>',
                     months: '<h2 class="datepicker__title item-title">MM yyyy</h2>',
@@ -34,9 +35,13 @@ $(document).ready(function(){
                     }
                 }
             };
-            
-        datepicker = $(inputHidden).datepicker(options).data('datepicker');
         
+        if (inlineDatepicker.length == 0){
+            datepicker = $(inputHidden).datepicker(options).data('datepicker');
+
+        }else{
+            datepicker = $(inlineDatepicker).datepicker(options).data('datepicker');
+        }
 
         let clearButton = $('<button class="simple-button simple-button_secondary cta-text">Очистить</button>');
         let applyButton = $('<button class="simple-button cta-text">Применить</button></div>');
@@ -57,9 +62,15 @@ $(document).ready(function(){
         applyButton.on('click touch', function(e){
             e.preventDefault();
 
-            triggerInputs.each((i, el) => {
-                $(el).val(dates[i].toLocaleDateString());
-            });
+            if (dates.length > 1){
+                if (triggerInputs.length > 1){
+                    triggerInputs.each((i, el) => {
+                        $(el).val(dates[i].toLocaleDateString());
+                    });
+                }else{
+                    triggerInputs.val(inputHidden.val());
+                }
+            }
             
             datepicker.hide();
             $(dateDropdown).data('datepicker-hidden', 'true');

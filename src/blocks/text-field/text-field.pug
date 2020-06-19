@@ -1,5 +1,7 @@
 mixin text-field(placeholder, id, classModifier)
     .text-field(class=classModifier)
         input(type="text", placeholder=placeholder, id=id, name=id).text-field__input.basic-text
+        if block
+            block
 
 include ./_subscription/text-field_subscription.pug

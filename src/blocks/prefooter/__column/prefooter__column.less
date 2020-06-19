@@ -3,9 +3,11 @@
 .prefooter__column{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    &:first-of-type, &:last-of-type{
+    justify-content: flex-start;
+    align-items: center;
+    &:first-of-type{
         width: 260px;
+        align-items: flex-start;
     } 
     & > *:not(:last-child){
         margin-bottom: 20px;

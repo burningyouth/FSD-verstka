@@ -1,0 +1,99 @@
+include ../pug/mixins.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href='./assets/css/kit.css')
+        title Headers &#38; footers
+    body.basic-text.ui-kit-body
+        .ml-25.mt-30
+            +logo_secondary
+        div(style='margin-top: 70px')
+            +navbar_static
+                li.navbar__item
+                    a(href='/').navbar__link.navbar__link_active Home
+                li.navbar__item 
+                    a(href='#').navbar__link About Us
+                li.navbar__item.dropdown
+                    a(data-content-modifier-class="navbar-dropdown__list_collapsed").navbar__link.navbar-dropdown__toggler.dropdown__toggler.dropdown__icon Services
+                    ul.dropdown__content.navbar-dropdown__list
+                        li
+                            a(href="#").navbar__link first
+                        li
+                            a(href="#").navbar__link second
+                        li
+                            a(href="#").navbar__link third
+                li.navbar__item.navbar__item_small-margin
+                    a(href='#').navbar__link Careers
+                li.navbar__item
+                    a(href='#').navbar__link News
+                li.navbar__item
+                    a(href='#').navbar__link Documentation
+                li.navbar__item
+                    +button_link('login', 'login.html', '', 'button_slim button_outline')
+                li.navbar__item.navbar__item_small-margin
+                    +button_link('register', 'registration.html', '', 'button_slim')
+        .mt-40
+            +navbar_static
+                li.navbar__item
+                    a(href='/').navbar__link.navbar__link_active Home
+                li.navbar__item 
+                    a(href='#').navbar__link About Us
+                li.navbar__item.dropdown
+                    a(data-content-modifier-class="navbar-dropdown__list_collapsed").navbar__link.navbar-dropdown__toggler.dropdown__toggler.dropdown__icon Services
+                    ul.dropdown__content.navbar-dropdown__list
+                        li
+                            a(href="#").navbar__link first
+                        li
+                            a(href="#").navbar__link second
+                        li
+                            a(href="#").navbar__link third
+                li.navbar__item.navbar__item_small-margin
+                    a(href='#').navbar__link Careers
+                li.navbar__item
+                    a(href='#').navbar__link News
+                li.navbar__item
+                    a(href='#').navbar__link Documentation
+                .navbar__divider 
+                li.navbar__item Cosmin Negoita
+        .mt-40
+            +prefooter
+                .prefooter__column
+                    +logo
+                    .basic-text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+                .prefooter__column
+                    .prefooter__column-label.cta-text Navigation
+                    a(href='#').prefooter__link About Us
+                    a(href='#').prefooter__link News
+                    a(href='#').prefooter__link Support
+                    a(href='#').prefooter__link Products
+                .prefooter__column
+                    .prefooter__column-label.cta-text ABOUT US
+                    a(href='#').prefooter__link Who we are
+                    a(href='#').prefooter__link Our team
+                    a(href='#').prefooter__link Careers
+                    a(href='#').prefooter__link Investors
+                .prefooter__column
+                    .prefooter__column-label.cta-text Support
+                    a(href='#').prefooter__link Documentation
+                    a(href='#').prefooter__link Community
+                    a(href='#').prefooter__link Get in Touch
+                .prefooter__column
+                    .prefooter__column-label.cta-text Subscribe to our newsletter
+                    div Receive our latest news and promotions in your inbox!
+                    +text-field_subscription('Your email address', 'subscribe', 'arrow_forward')
+            +footer
+                .footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+                .footer__social-icons
+                    +social-icon('fa-twitter', '#')
+                    +social-icon('fa-facebook-square', '#')
+                    +social-icon('fa-instagram', '#')
+        .mt-40.mb-50
+            +prefooter_only-text('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
+                .prefooter__social-icons
+                    +social-icon('fa-twitter', '#')
+                    +social-icon('fa-facebook-square', '#')
+                    +social-icon('fa-instagram', '#')
+        script(src='./assets/js/kit.js')

@@ -14,6 +14,10 @@
         background: none !important;
     }
 
+    .datepicker--nav-action{
+        width: 24px;
+    }
+
     .datepicker--pointer {
         display: none;
     }
@@ -24,6 +28,11 @@
 
     .datepicker--nav{
         border:none;
+        padding: 0;
+    }
+
+    .datepicker--months, .datepicker--years{
+        height: 208.5px;
     }
 
     .datepicker--days-names{
@@ -45,7 +54,7 @@
         color: @purple;
         text-transform: capitalize !important;
         width: 39.7px;
-        height: 39.7px;
+        height: 39.1px;
     }
 
     .datepicker--cell{
@@ -121,8 +130,8 @@
         }
 
         &.datepicker--cell-month, &.datepicker--cell-year{
-            width: 69.795px;
-            height: 69.795px;
+            width: 69.5px;
+            height: 69.5px;
             
         }
 
@@ -131,7 +140,7 @@
             font-size: 12px;
             line-height: 15px;
             width: 39.7px;
-            height: 39.7px;
+            height: 39.1px;
 
             &.-other-month-{
                 color: @dark-shade25;

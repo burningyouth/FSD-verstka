@@ -5,8 +5,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        each css in htmlWebpackPlugin.files.css
-            link(rel="stylesheet", href=css)
+        link(rel="stylesheet", href='./assets/css/kit.css')
         title Комната
     body.basic-text
 
@@ -37,7 +36,7 @@ html(lang="en")
                         .item-title Впечатления от номера
                         +pie(0,100,22,30)
                     .room-details-main__reviews.mb-30
-                        .flex.flex__justify-content_space-between.flex__align-items_center.flex__align-items-md_flex-end.flex__direction_column.flex__direction-md_row.mb-20 
+                        .d-flex.flex__justify-content_space-between.flex__align-items_center.flex__align-items-md_flex-end.flex__direction_column.flex__direction-md_row.mb-20 
                             .item-title Отзывы посетителей номера
                             small.caption-text.fs-14.mt-10.mt-md-0 2 отзыва
                         +testimonial('assets/img/testimonial.jpg', 12, 'Мурад Сарафанов', '5 дней назад', 'mb-20')
@@ -46,7 +45,7 @@ html(lang="en")
                             |Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент
                     .room-details-main__rules.mb-md-0.mb-30
                         .item-title.mb-20.ml-0.ml-xl-20 Правила
-                        +bullet-list('Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
+                        +bullet-list('','Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
                     .room-details-main__cancel
                         .item-title.mb-20 Отмена
                         div Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
@@ -72,5 +71,4 @@ html(lang="en")
 
             +footer_completed
         
-        each js in htmlWebpackPlugin.files.js
-            script(src=js)
+        script(src='./assets/js/kit.js')

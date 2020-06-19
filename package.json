@@ -2,7 +2,7 @@
   "name": "webpacktemplate",
   "version": "1.0.0",
   "description": "FSD верстка",
-  "main": "pages/ui-kit.js",
+  "main": "src/entry/kit.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js",
