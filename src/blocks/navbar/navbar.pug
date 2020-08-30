@@ -2,7 +2,7 @@ mixin navbar
     .navbar
         .navbar__content.container
             +logo
-            .show-lg
+            .navbar__controls
                 button(data-target='#navbar__items', data-class-mod= 'navbar__items_collapsed', data-self-class-mod='burger_active').burger.toggle-class-button
                     span.burger__main
             ul.navbar__items.basic-text#navbar__items
@@ -13,7 +13,7 @@ mixin navbar_static
     .navbar.navbar_static
         .navbar__content.container
             +logo
-            .show-lg
+            .navbar__controls
                 button(data-target='#navbar__items', data-class-mod= 'navbar__items_collapsed', data-self-class-mod='burger_active').burger.toggle-class-button
                     span.burger__main
             ul.navbar__items.basic-text#navbar__items
@@ -24,7 +24,7 @@ mixin navbar_completed
     .navbar
         .navbar__content.container
             +logo
-            .show-lg
+            .navbar__controls
                 button(data-toggle-type='navbar-expand', data-target='#navbar__items', data-collapsed="false", data-self-modifier-class='burger_active', type='button').burger
                     span.burger__main
             ul.navbar__items.basic-text#navbar__items
@@ -61,7 +61,7 @@ mixin navbar_completed_for-search-room
     .navbar
         .navbar__content.container
             +logo
-            .show-lg
+            .navbar__controls
                 button(data-toggle-type='navbar-expand', data-target='#navbar__search', data-collapsed="false", data-self-modifier-class='navbar__icon_active', type='button').material-icons.navbar__icon search
                 button(data-toggle-type='navbar-expand', data-target='#navbar__items', data-collapsed="false", data-self-modifier-class='burger_active', type='button').burger
                     span.burger__main
